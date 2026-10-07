@@ -1,0 +1,1499 @@
+{
+  "finances": [],
+  "teachers": [
+    {
+      "id": "tchr-uulhlpgo3",
+      "name": "SSEMAKULA JOSEPH",
+      "initials": "SS",
+      "phone": "O757211677",
+      "specialization": "HEADTEACHER",
+      "status": "Active"
+    },
+    {
+      "id": "tchr-pubd9g218",
+      "name": " KIMERA JOY",
+      "initials": " K",
+      "phone": "O703986845",
+      "specialization": "TEACHER",
+      "status": "Active"
+    },
+    {
+      "id": "tchr-hgu4uofsu",
+      "name": "NAMBIRIGE NORAH LOVINSA",
+      "initials": "NA",
+      "phone": "O705884460",
+      "specialization": "TEACHER",
+      "status": "Active"
+    },
+    {
+      "id": "tchr-h8ne5rfxw",
+      "name": "NASANGHA NIMULOD",
+      "initials": "NA",
+      "phone": "O730404110",
+      "specialization": "TEACHER",
+      "status": "Active"
+    },
+    {
+      "id": "tchr-q6wwfjevh",
+      "name": "NANNOZI WINNIE",
+      "initials": "NA",
+      "phone": "O708531444",
+      "specialization": "TEACHER",
+      "status": "Active"
+    },
+    {
+      "id": "tchr-27ef0v4n2",
+      "name": "SSENYONJO JOHN",
+      "initials": "SS",
+      "phone": "O787604877",
+      "specialization": "TEACHER",
+      "status": "Active"
+    },
+    {
+      "id": "tchr-0ag3m4qcm",
+      "name": "BABIRYE JUSTINE",
+      "initials": "BA",
+      "phone": "O756873887",
+      "specialization": " TEACHER",
+      "status": "Active"
+    },
+    {
+      "id": "tchr-7m24g2i6x",
+      "name": "OKELLO JOSEPH",
+      "initials": "OK",
+      "phone": "O773344845",
+      "specialization": "TEACHER",
+      "status": "Active"
+    },
+    {
+      "id": "tchr-rbewvkp9y",
+      "name": "NAKIMERA JUSTINE ",
+      "initials": "NA",
+      "phone": "O743894961",
+      "specialization": "TEACHER",
+      "status": "Active"
+    },
+    {
+      "id": "tchr-6nbpllco5",
+      "name": "NABATANZI ANNET",
+      "initials": "NA",
+      "phone": "O750946927",
+      "specialization": "TEACHER",
+      "status": "Active"
+    },
+    {
+      "id": "tchr-di838lbm6",
+      "name": "KATULINDE LILIAN",
+      "initials": "KA",
+      "phone": "O789510116",
+      "specialization": "TEACHER",
+      "status": "Active"
+    },
+    {
+      "id": "tchr-q9vx0rfg3",
+      "name": "NAMAZZI BRENDA",
+      "initials": "NA",
+      "phone": "O706321430",
+      "specialization": "TEACHER",
+      "status": "Active"
+    },
+    {
+      "id": "tchr-nfo0j3u2l",
+      "name": "MWERU GONZAGA",
+      "initials": "MW",
+      "phone": "O772494290",
+      "specialization": "TEACHER",
+      "status": "Active"
+    },
+    {
+      "id": "tchr-5w3r0ym20",
+      "name": "ABAGO SANTA",
+      "initials": "AB",
+      "phone": "O786681775",
+      "specialization": "TEACHER",
+      "status": "Active"
+    },
+    {
+      "id": "tchr-iuobxs4e5",
+      "name": "ONYANGO  GEOFREY",
+      "initials": "ON",
+      "phone": "O755694220",
+      "specialization": "TEACHER",
+      "status": "Active"
+    }
+  ],
+  "nonTeachingStaff": [
+    {
+      "id": "ntsf-ltki0adzf",
+      "name": "NANYOMBI MARGARET",
+      "department": "BURSAR",
+      "phone": "0758 72 81 65",
+      "status": "Active"
+    },
+    {
+      "id": "ntsf-bt3cvly3j",
+      "name": "AMANI ISMAIL",
+      "department": "SECURITY GUARD",
+      "phone": "O74008678",
+      "status": "Active"
+    },
+    {
+      "id": "ntsf-jdkq53ys6",
+      "name": "NANKWASA SAUL",
+      "department": "SECURITY GUARD",
+      "phone": "O788456195",
+      "status": "Active"
+    },
+    {
+      "id": "ntsf-pz5fm3aze",
+      "name": "NALWOGA JANE",
+      "department": "CLEANER",
+      "phone": "O780997799",
+      "status": "Active"
+    },
+    {
+      "id": "ntsf-oh493cgce",
+      "name": "TURYAHEBWA DIANA",
+      "department": "CLEANER",
+      "phone": "O763079231",
+      "status": "Active"
+    },
+    {
+      "id": "ntsf-jrtsegltx",
+      "name": "NAMAGANDA FATUMA ",
+      "department": "MATRON",
+      "phone": "",
+      "status": "Active"
+    },
+    {
+      "id": "ntsf-176t5w5gv",
+      "name": "NABUKENYA PROSSY",
+      "department": "COOK",
+      "phone": "O755350072",
+      "status": "Active"
+    },
+    {
+      "id": "ntsf-thxoj0xoo",
+      "name": "SSANSA ANTHONY",
+      "department": "DRIVER",
+      "phone": "O756964966",
+      "status": "Active"
+    }
+  ],
+  "learnerUpdates": [
+    {
+      "fullName": "Aleem Afan",
+      "firstName": "Aleem",
+      "lastName": "Afan",
+      "outstandingBalance": "0"
+    },
+    {
+      "fullName": "Mugambwa Mukasa",
+      "firstName": "Mugambwa",
+      "lastName": "Mukasa",
+      "outstandingBalance": "0"
+    },
+    {
+      "fullName": "Nikky",
+      "firstName": "Nikky",
+      "lastName": "",
+      "outstandingBalance": "0"
+    },
+    {
+      "fullName": "Nabatanzi Hannah",
+      "firstName": "Nabatanzi",
+      "lastName": "Hannah",
+      "outstandingBalance": "0"
+    },
+    {
+      "fullName": "Sempela Troy",
+      "firstName": "Sempela",
+      "lastName": "Troy",
+      "outstandingBalance": "0"
+    },
+    {
+      "fullName": "Ruth",
+      "firstName": "Ruth",
+      "lastName": "",
+      "outstandingBalance": "0"
+    },
+    {
+      "fullName": "Nimurungi Sserugo",
+      "firstName": "Nimurungi",
+      "lastName": "Sserugo",
+      "outstandingBalance": "80000"
+    },
+    {
+      "fullName": "Nalubega Zion",
+      "firstName": "Nalubega",
+      "lastName": "Zion",
+      "outstandingBalance": "40000"
+    },
+    {
+      "fullName": "Nanyonga kiwanuka",
+      "firstName": "Nanyonga",
+      "lastName": "kiwanuka",
+      "outstandingBalance": "0"
+    },
+    {
+      "fullName": "Adeke",
+      "firstName": "Adeke",
+      "lastName": "",
+      "outstandingBalance": "0"
+    },
+    {
+      "fullName": "Namutebi",
+      "firstName": "Namutebi",
+      "lastName": "",
+      "outstandingBalance": "160000"
+    },
+    {
+      "fullName": "Mukisa",
+      "firstName": "Mukisa",
+      "lastName": "",
+      "outstandingBalance": "0"
+    },
+    {
+      "fullName": "Wesonga",
+      "firstName": "Wesonga",
+      "lastName": "",
+      "outstandingBalance": "60000"
+    },
+    {
+      "fullName": "Aafruuz Mansoor",
+      "firstName": "Aafruuz",
+      "lastName": "Mansoor",
+      "outstandingBalance": "150000"
+    },
+    {
+      "fullName": "Mali",
+      "firstName": "Mali ",
+      "lastName": "",
+      "outstandingBalance": "80000"
+    },
+    {
+      "fullName": "Nansubuga Shuquran",
+      "firstName": "Nansubuga",
+      "lastName": "Shuquran",
+      "outstandingBalance": "0"
+    },
+    {
+      "fullName": "Wamala Abdu",
+      "firstName": "Wamala",
+      "lastName": "Abdu",
+      "outstandingBalance": "1000"
+    },
+    {
+      "fullName": "Namwori Grace",
+      "firstName": "Namwori",
+      "lastName": "Grace",
+      "outstandingBalance": "0"
+    },
+    {
+      "fullName": "ivana",
+      "firstName": "ivana",
+      "lastName": "",
+      "outstandingBalance": "20000"
+    },
+    {
+      "fullName": "Ssenyondo kakooza jovan",
+      "firstName": "Ssenyondo",
+      "lastName": "kakooza jovan",
+      "outstandingBalance": "90000"
+    },
+    {
+      "fullName": "Nakitende Elizabeth",
+      "firstName": "Nakitende",
+      "lastName": "Elizabeth",
+      "outstandingBalance": "-100000"
+    },
+    {
+      "fullName": "Muwanguzi victor",
+      "firstName": "Muwanguzi",
+      "lastName": "victor",
+      "outstandingBalance": "0"
+    },
+    {
+      "fullName": "Gabriell Grace",
+      "firstName": "Gabriell",
+      "lastName": "Grace",
+      "outstandingBalance": "0"
+    },
+    {
+      "fullName": "Mulwanyi Chrizestom",
+      "firstName": "Mulwanyi",
+      "lastName": "Chrizestom",
+      "outstandingBalance": "140000"
+    },
+    {
+      "fullName": "Kaleb Kolya",
+      "firstName": "Kaleb",
+      "lastName": "Kolya",
+      "outstandingBalance": "0"
+    },
+    {
+      "fullName": "Princess Nakato",
+      "firstName": "Princess",
+      "lastName": "Nakato",
+      "outstandingBalance": "145000"
+    },
+    {
+      "fullName": "Lauren  Malaika",
+      "firstName": "Lauren ",
+      "lastName": "Malaika",
+      "outstandingBalance": "0"
+    },
+    {
+      "fullName": "Alvin",
+      "firstName": "Alvin",
+      "lastName": "",
+      "outstandingBalance": "0"
+    },
+    {
+      "fullName": "Ntambi Kabenge",
+      "firstName": "Ntambi",
+      "lastName": "Kabenge",
+      "outstandingBalance": "0"
+    },
+    {
+      "fullName": "Nakigozi Martha",
+      "firstName": "Nakigozi",
+      "lastName": "Martha",
+      "outstandingBalance": "-70000"
+    },
+    {
+      "fullName": "Ssemakula Asher",
+      "firstName": "Ssemakula",
+      "lastName": "Asher",
+      "outstandingBalance": "0"
+    },
+    {
+      "fullName": "Kristian  Ogola",
+      "firstName": "Kristian ",
+      "lastName": "Ogola",
+      "outstandingBalance": "0"
+    },
+    {
+      "fullName": "Nakyeyune Sarah",
+      "firstName": "Nakyeyune",
+      "lastName": "Sarah",
+      "outstandingBalance": "80000"
+    },
+    {
+      "fullName": "Ekisula ebweru salim",
+      "firstName": "Ekisula ebweru",
+      "lastName": "salim",
+      "outstandingBalance": "0"
+    },
+    {
+      "fullName": "Babirye Victoria",
+      "firstName": "Babirye",
+      "lastName": "Victoria",
+      "outstandingBalance": "0"
+    },
+    {
+      "fullName": "Ganiima Ramsha",
+      "firstName": "Ganiima",
+      "lastName": "Ramsha",
+      "outstandingBalance": "40000"
+    },
+    {
+      "fullName": "Kiyimba Joram",
+      "firstName": "Kiyimba",
+      "lastName": "Joram",
+      "outstandingBalance": "230000"
+    },
+    {
+      "fullName": "Mukisa Sharom",
+      "firstName": "Mukisa",
+      "lastName": "Sharom",
+      "outstandingBalance": "0"
+    },
+    {
+      "fullName": "Saka Raymond",
+      "firstName": "Saka",
+      "lastName": "Raymond",
+      "outstandingBalance": "65000"
+    },
+    {
+      "fullName": "Suhairah Isah",
+      "firstName": "Suhairah",
+      "lastName": "Isah",
+      "outstandingBalance": "90000"
+    },
+    {
+      "fullName": "Mubiru Fahim",
+      "firstName": "Mubiru",
+      "lastName": "Fahim",
+      "outstandingBalance": "0"
+    },
+    {
+      "fullName": "Hossana Abigail",
+      "firstName": "Hossana",
+      "lastName": "Abigail",
+      "outstandingBalance": "0"
+    },
+    {
+      "fullName": "mudoola",
+      "firstName": "mudoola",
+      "lastName": "",
+      "outstandingBalance": "80000"
+    },
+    {
+      "fullName": "Ninsiima",
+      "firstName": "Ninsiima",
+      "lastName": "",
+      "outstandingBalance": "0"
+    },
+    {
+      "fullName": "Namuganyi",
+      "firstName": "Namuganyi",
+      "lastName": "",
+      "outstandingBalance": "50000"
+    },
+    {
+      "fullName": "Nakibuuka",
+      "firstName": "Nakibuuka ",
+      "lastName": "",
+      "outstandingBalance": "90000"
+    },
+    {
+      "fullName": "Mirembe",
+      "firstName": "Mirembe ",
+      "lastName": "",
+      "outstandingBalance": "80000"
+    },
+    {
+      "fullName": "Faudel",
+      "firstName": "Faudel ",
+      "lastName": "",
+      "outstandingBalance": "0"
+    },
+    {
+      "fullName": "Kanamwangi",
+      "firstName": "Kanamwangi",
+      "lastName": "",
+      "outstandingBalance": "100000"
+    },
+    {
+      "fullName": "Kaweesa Mukisa",
+      "firstName": "Kaweesa",
+      "lastName": "Mukisa",
+      "outstandingBalance": "110000"
+    },
+    {
+      "fullName": "Victor Mugisha",
+      "firstName": "Victor",
+      "lastName": "Mugisha",
+      "outstandingBalance": "195000"
+    },
+    {
+      "fullName": "Emmanuella Namboozo",
+      "firstName": "Emmanuella",
+      "lastName": "Namboozo",
+      "outstandingBalance": "0"
+    },
+    {
+      "fullName": "Mirembe Zuri",
+      "firstName": "Mirembe",
+      "lastName": "Zuri",
+      "outstandingBalance": "0"
+    },
+    {
+      "fullName": "Jeredin Bitege",
+      "firstName": "Jeredin",
+      "lastName": "Bitege",
+      "outstandingBalance": "60000"
+    },
+    {
+      "fullName": "Haitham Kyeyune",
+      "firstName": "Haitham",
+      "lastName": "Kyeyune",
+      "outstandingBalance": "80000"
+    },
+    {
+      "fullName": "kawalya hormony",
+      "firstName": "kawalya",
+      "lastName": "hormony",
+      "outstandingBalance": "0"
+    },
+    {
+      "fullName": "Lwanga Adrian",
+      "firstName": "Lwanga",
+      "lastName": "Adrian",
+      "outstandingBalance": "0"
+    },
+    {
+      "fullName": "Jeremiah Mukisa",
+      "firstName": "Jeremiah",
+      "lastName": "Mukisa",
+      "outstandingBalance": "0"
+    },
+    {
+      "fullName": "Gift  nakiwala",
+      "firstName": "Gift ",
+      "lastName": "nakiwala",
+      "outstandingBalance": "0"
+    },
+    {
+      "fullName": "Kizza Bumpenje Prosper",
+      "firstName": "Kizza",
+      "lastName": "Bumpenje Prosper",
+      "outstandingBalance": "0"
+    },
+    {
+      "fullName": "Nakasujja Catherine",
+      "firstName": "Nakasujja",
+      "lastName": "Catherine",
+      "outstandingBalance": "0"
+    },
+    {
+      "fullName": "Mukisa Nathaniel",
+      "firstName": "Mukisa",
+      "lastName": "Nathaniel",
+      "outstandingBalance": "0"
+    },
+    {
+      "fullName": "Crystal Aturinda",
+      "firstName": "Crystal",
+      "lastName": "Aturinda",
+      "outstandingBalance": "0"
+    },
+    {
+      "fullName": "Kajjubi",
+      "firstName": "Kajjubi",
+      "lastName": "",
+      "outstandingBalance": "70000"
+    },
+    {
+      "fullName": "Precious evelyne",
+      "firstName": "Precious",
+      "lastName": "evelyne",
+      "outstandingBalance": "0"
+    },
+    {
+      "fullName": "Serena Barrika",
+      "firstName": "Serena",
+      "lastName": "Barrika",
+      "outstandingBalance": "0"
+    },
+    {
+      "fullName": "Latifa Malika",
+      "firstName": "Latifa",
+      "lastName": "Malika",
+      "outstandingBalance": "0"
+    },
+    {
+      "fullName": "Ojulu",
+      "firstName": "Ojulu",
+      "lastName": "",
+      "outstandingBalance": "0"
+    },
+    {
+      "fullName": "Nanyonjo kiwanuka",
+      "firstName": "Nanyonjo",
+      "lastName": "kiwanuka",
+      "outstandingBalance": "0"
+    },
+    {
+      "fullName": "Dikan Joseph Teem",
+      "firstName": "Dikan Joseph",
+      "lastName": "Teem",
+      "outstandingBalance": "0"
+    },
+    {
+      "fullName": "Ssekajja",
+      "firstName": "Ssekajja",
+      "lastName": "",
+      "outstandingBalance": "30000"
+    },
+    {
+      "fullName": "Ngoloobe",
+      "firstName": "Ngoloobe",
+      "lastName": "",
+      "outstandingBalance": "100000"
+    },
+    {
+      "fullName": "Mayega  Darren",
+      "firstName": "Mayega ",
+      "lastName": "Darren",
+      "outstandingBalance": "0"
+    },
+    {
+      "fullName": "Jerome Mugwaanya",
+      "firstName": "Jerome",
+      "lastName": "Mugwaanya",
+      "outstandingBalance": "100000"
+    },
+    {
+      "fullName": "Jethro Mugwaanya",
+      "firstName": "Jethro",
+      "lastName": "Mugwaanya",
+      "outstandingBalance": "100000"
+    },
+    {
+      "fullName": "Namutebi",
+      "firstName": "Namutebi",
+      "lastName": "",
+      "outstandingBalance": "50000"
+    },
+    {
+      "fullName": "Namutamba Faith",
+      "firstName": "Namutamba",
+      "lastName": "Faith",
+      "outstandingBalance": "60000"
+    },
+    {
+      "fullName": "Kiyimba Jotham",
+      "firstName": "Kiyimba",
+      "lastName": "Jotham",
+      "outstandingBalance": "60000"
+    },
+    {
+      "fullName": "Bajjampola Hillary",
+      "firstName": "Bajjampola",
+      "lastName": "Hillary",
+      "outstandingBalance": "0"
+    },
+    {
+      "fullName": "Omarimungu Jordan",
+      "firstName": "Omarimungu",
+      "lastName": "Jordan",
+      "outstandingBalance": "0"
+    },
+    {
+      "fullName": "Hannah Mbowa",
+      "firstName": "Hannah",
+      "lastName": "Mbowa",
+      "outstandingBalance": "110000"
+    },
+    {
+      "fullName": "Nambi Esther",
+      "firstName": "Nambi",
+      "lastName": "Esther",
+      "outstandingBalance": "0"
+    },
+    {
+      "fullName": "Edgar Barrack",
+      "firstName": "Edgar",
+      "lastName": "Barrack",
+      "outstandingBalance": "0"
+    },
+    {
+      "fullName": "Nalubega Keiley",
+      "firstName": "Nalubega",
+      "lastName": "Keiley",
+      "outstandingBalance": "-50000"
+    },
+    {
+      "fullName": "Nakalyango Shanitah",
+      "firstName": "Nakalyango",
+      "lastName": "Shanitah",
+      "outstandingBalance": "0"
+    },
+    {
+      "fullName": "Namuwaya",
+      "firstName": "Namuwaya",
+      "lastName": "",
+      "outstandingBalance": "0"
+    },
+    {
+      "fullName": "Karungi Amber",
+      "firstName": "Karungi",
+      "lastName": "Amber",
+      "outstandingBalance": "130000"
+    },
+    {
+      "fullName": "Achsah Serah",
+      "firstName": "Achsah",
+      "lastName": "Serah",
+      "outstandingBalance": "200000"
+    },
+    {
+      "fullName": "Kadyesi Muhammad",
+      "firstName": "Kadyesi",
+      "lastName": "Muhammad",
+      "outstandingBalance": "0"
+    },
+    {
+      "fullName": "Kisakye Achali",
+      "firstName": "Kisakye",
+      "lastName": "Achali",
+      "outstandingBalance": "0"
+    },
+    {
+      "fullName": "Nalwanga",
+      "firstName": "Nalwanga",
+      "lastName": "",
+      "outstandingBalance": "50000"
+    },
+    {
+      "fullName": "Racheal",
+      "firstName": "Racheal",
+      "lastName": "",
+      "outstandingBalance": "0"
+    },
+    {
+      "fullName": "Clinthen",
+      "firstName": "Clinthen",
+      "lastName": "",
+      "outstandingBalance": "9000"
+    },
+    {
+      "fullName": "Nalugo jay",
+      "firstName": "Nalugo",
+      "lastName": "jay",
+      "outstandingBalance": "110000"
+    },
+    {
+      "fullName": "Nabwire",
+      "firstName": "Nabwire",
+      "lastName": "",
+      "outstandingBalance": "80000"
+    },
+    {
+      "fullName": "Mulungi",
+      "firstName": "Mulungi",
+      "lastName": "",
+      "outstandingBalance": "310000"
+    },
+    {
+      "fullName": "Delvin",
+      "firstName": "Delvin",
+      "lastName": "",
+      "outstandingBalance": "160000"
+    },
+    {
+      "fullName": "PRIMARY THREE",
+      "firstName": "PRIMARY THREE",
+      "lastName": "",
+      "outstandingBalance": "0"
+    },
+    {
+      "fullName": "Muwanguzi Newton",
+      "firstName": "Muwanguzi",
+      "lastName": "Newton",
+      "outstandingBalance": "7000"
+    },
+    {
+      "fullName": "Mukisa Nathan",
+      "firstName": "Mukisa",
+      "lastName": "Nathan",
+      "outstandingBalance": "60000"
+    },
+    {
+      "fullName": "Kalungi Blessing",
+      "firstName": "Kalungi",
+      "lastName": "Blessing",
+      "outstandingBalance": "30000"
+    },
+    {
+      "fullName": "Adrine- Tushemeyirwe",
+      "firstName": "Adrine-",
+      "lastName": "Tushemeyirwe",
+      "outstandingBalance": "0"
+    },
+    {
+      "fullName": "Ssemalulu Rich",
+      "firstName": "Ssemalulu",
+      "lastName": "Rich",
+      "outstandingBalance": "55000"
+    },
+    {
+      "fullName": "Rahmah Nakaweesa",
+      "firstName": "Rahmah",
+      "lastName": "Nakaweesa",
+      "outstandingBalance": "60000"
+    },
+    {
+      "fullName": "Dinah Mary",
+      "firstName": "Dinah",
+      "lastName": "Mary",
+      "outstandingBalance": "210000"
+    },
+    {
+      "fullName": "Nakawooya Swabrah",
+      "firstName": "Nakawooya",
+      "lastName": "Swabrah",
+      "outstandingBalance": "0"
+    },
+    {
+      "fullName": "Bineme  Jacob",
+      "firstName": "Bineme ",
+      "lastName": "Jacob",
+      "outstandingBalance": "-360000"
+    },
+    {
+      "fullName": "Poni Divine",
+      "firstName": "Poni",
+      "lastName": "Divine",
+      "outstandingBalance": "0"
+    },
+    {
+      "fullName": "Atuheire Beatrice",
+      "firstName": "Atuheire",
+      "lastName": "Beatrice",
+      "outstandingBalance": "70000"
+    },
+    {
+      "fullName": "Philiberta Alla Wasagali",
+      "firstName": "Philiberta",
+      "lastName": "Alla Wasagali",
+      "outstandingBalance": "-20000"
+    },
+    {
+      "fullName": "Naiga",
+      "firstName": "Naiga",
+      "lastName": "",
+      "outstandingBalance": "0"
+    },
+    {
+      "fullName": "Nabangi",
+      "firstName": "Nabangi",
+      "lastName": "",
+      "outstandingBalance": "0"
+    },
+    {
+      "fullName": "Walter",
+      "firstName": "Walter",
+      "lastName": "",
+      "outstandingBalance": "0"
+    },
+    {
+      "fullName": "Chrispas Bajja",
+      "firstName": "Chrispas",
+      "lastName": "Bajja",
+      "outstandingBalance": "99000"
+    },
+    {
+      "fullName": "Namukone",
+      "firstName": "Namukone",
+      "lastName": "",
+      "outstandingBalance": "170000"
+    },
+    {
+      "fullName": "Namuwaya",
+      "firstName": "Namuwaya",
+      "lastName": "",
+      "outstandingBalance": "0"
+    },
+    {
+      "fullName": "Nahabwe",
+      "firstName": "Nahabwe",
+      "lastName": "",
+      "outstandingBalance": "305000"
+    },
+    {
+      "fullName": "Giduno Wagama",
+      "firstName": "Giduno",
+      "lastName": "Wagama",
+      "outstandingBalance": "130000"
+    },
+    {
+      "fullName": "Amuria muwanguzi",
+      "firstName": "Amuria",
+      "lastName": "muwanguzi",
+      "outstandingBalance": "10000"
+    },
+    {
+      "fullName": "Farish",
+      "firstName": "Farish",
+      "lastName": "",
+      "outstandingBalance": "170000"
+    },
+    {
+      "fullName": "Namatovu Nestine",
+      "firstName": "Namatovu",
+      "lastName": "Nestine",
+      "outstandingBalance": "50000"
+    },
+    {
+      "fullName": "Nakirya",
+      "firstName": "Nakirya",
+      "lastName": "",
+      "outstandingBalance": "100000"
+    },
+    {
+      "fullName": "NAMAGANDA MERISHA",
+      "firstName": "NAMAGANDA MERISHA",
+      "lastName": "",
+      "outstandingBalance": "0"
+    },
+    {
+      "fullName": "Joy Cynthia",
+      "firstName": "Joy",
+      "lastName": "Cynthia",
+      "outstandingBalance": "0"
+    },
+    {
+      "fullName": "Bagyenzi Benjamin",
+      "firstName": "Bagyenzi",
+      "lastName": "Benjamin",
+      "outstandingBalance": "0"
+    },
+    {
+      "fullName": "Janet Babirye",
+      "firstName": "Janet",
+      "lastName": "Babirye",
+      "outstandingBalance": "0"
+    },
+    {
+      "fullName": "Namele Rose",
+      "firstName": "Namele",
+      "lastName": "Rose",
+      "outstandingBalance": "0"
+    },
+    {
+      "fullName": "Mugerwa Samantha",
+      "firstName": "Mugerwa",
+      "lastName": "Samantha",
+      "outstandingBalance": "0"
+    },
+    {
+      "fullName": "Veronica Wanyana",
+      "firstName": "Veronica",
+      "lastName": "Wanyana",
+      "outstandingBalance": "0"
+    },
+    {
+      "fullName": "Abigail Immaculate",
+      "firstName": "Abigail",
+      "lastName": "Immaculate",
+      "outstandingBalance": "0"
+    },
+    {
+      "fullName": "Tosuma Jacob",
+      "firstName": "Tosuma",
+      "lastName": "Jacob",
+      "outstandingBalance": "-335000"
+    },
+    {
+      "fullName": "Nanyonga Kiwanuka",
+      "firstName": "Nanyonga",
+      "lastName": "Kiwanuka",
+      "outstandingBalance": "0"
+    },
+    {
+      "fullName": "Nakayiza Rehemah",
+      "firstName": "Nakayiza",
+      "lastName": "Rehemah",
+      "outstandingBalance": "0"
+    },
+    {
+      "fullName": "Agongo",
+      "firstName": "Agongo ",
+      "lastName": "",
+      "outstandingBalance": "0"
+    },
+    {
+      "fullName": "Amoding Muwanguzi",
+      "firstName": "Amoding",
+      "lastName": "Muwanguzi",
+      "outstandingBalance": "25000"
+    },
+    {
+      "fullName": "Namatta |patricia",
+      "firstName": "Namatta",
+      "lastName": "|patricia",
+      "outstandingBalance": "0"
+    },
+    {
+      "fullName": "Twabalyaki",
+      "firstName": "Twabalyaki",
+      "lastName": "",
+      "outstandingBalance": "0"
+    },
+    {
+      "fullName": "kyeyune",
+      "firstName": "kyeyune",
+      "lastName": "",
+      "outstandingBalance": "0"
+    },
+    {
+      "fullName": "Atayi",
+      "firstName": "Atayi",
+      "lastName": "",
+      "outstandingBalance": "0"
+    },
+    {
+      "fullName": "Kuteesa",
+      "firstName": "Kuteesa",
+      "lastName": "",
+      "outstandingBalance": "0"
+    },
+    {
+      "fullName": "RUKUNDO",
+      "firstName": "RUKUNDO ",
+      "lastName": "",
+      "outstandingBalance": "0"
+    },
+    {
+      "fullName": "Josiah Kiyimba",
+      "firstName": "Josiah",
+      "lastName": "Kiyimba",
+      "outstandingBalance": "0"
+    },
+    {
+      "fullName": "Maraka Rubby",
+      "firstName": "Maraka",
+      "lastName": "Rubby",
+      "outstandingBalance": "0"
+    },
+    {
+      "fullName": "Aleysha Ssemakula",
+      "firstName": "Aleysha",
+      "lastName": "Ssemakula",
+      "outstandingBalance": "0"
+    },
+    {
+      "fullName": "Kirabo Angel",
+      "firstName": "Kirabo",
+      "lastName": "Angel",
+      "outstandingBalance": "0"
+    },
+    {
+      "fullName": "Hannah Bugwata",
+      "firstName": "Hannah",
+      "lastName": "Bugwata",
+      "outstandingBalance": "0"
+    },
+    {
+      "fullName": "Melisa Nagadya",
+      "firstName": "Melisa",
+      "lastName": "Nagadya",
+      "outstandingBalance": "0"
+    },
+    {
+      "fullName": "Victorious Wairimu",
+      "firstName": "Victorious",
+      "lastName": "Wairimu",
+      "outstandingBalance": "0"
+    },
+    {
+      "fullName": "Kaana Shilla",
+      "firstName": "Kaana",
+      "lastName": "Shilla",
+      "outstandingBalance": "67000"
+    },
+    {
+      "fullName": "Kyeswa Ronald",
+      "firstName": "Kyeswa",
+      "lastName": "Ronald",
+      "outstandingBalance": "0"
+    },
+    {
+      "fullName": "Ddamba Calvin",
+      "firstName": "Ddamba",
+      "lastName": "Calvin",
+      "outstandingBalance": "58000"
+    },
+    {
+      "fullName": "Angel Nabakiibi",
+      "firstName": "Angel",
+      "lastName": "Nabakiibi",
+      "outstandingBalance": "0"
+    },
+    {
+      "fullName": "Namugabi Nisha",
+      "firstName": "Namugabi",
+      "lastName": "Nisha",
+      "outstandingBalance": "0"
+    },
+    {
+      "fullName": "Benjamin Omu",
+      "firstName": "Benjamin",
+      "lastName": "Omu",
+      "outstandingBalance": "0"
+    },
+    {
+      "fullName": "Namaganda Prossy",
+      "firstName": "Namaganda",
+      "lastName": "Prossy",
+      "outstandingBalance": "0"
+    },
+    {
+      "fullName": "Wasswa Nsamba",
+      "firstName": "Wasswa",
+      "lastName": "Nsamba",
+      "outstandingBalance": "0"
+    },
+    {
+      "fullName": "Matovu Kato",
+      "firstName": "Matovu",
+      "lastName": "Kato",
+      "outstandingBalance": "0"
+    },
+    {
+      "fullName": "Birungi Nasaazi",
+      "firstName": "Birungi",
+      "lastName": "Nasaazi",
+      "outstandingBalance": "0"
+    },
+    {
+      "fullName": "Sam Membe",
+      "firstName": "Sam",
+      "lastName": "Membe",
+      "outstandingBalance": "0"
+    },
+    {
+      "fullName": "Akram Lwanga",
+      "firstName": "Akram",
+      "lastName": "Lwanga",
+      "outstandingBalance": "67000"
+    },
+    {
+      "fullName": "Kwagala Victor",
+      "firstName": "Kwagala",
+      "lastName": "Victor",
+      "outstandingBalance": "0"
+    },
+    {
+      "fullName": "Nanyange Kiwanuka",
+      "firstName": "Nanyange",
+      "lastName": "Kiwanuka",
+      "outstandingBalance": "0"
+    },
+    {
+      "fullName": "Nyonyintono Raaiz",
+      "firstName": "Nyonyintono",
+      "lastName": "Raaiz",
+      "outstandingBalance": "0"
+    },
+    {
+      "fullName": "Nansubuga",
+      "firstName": "Nansubuga ",
+      "lastName": "",
+      "outstandingBalance": "-670000"
+    },
+    {
+      "fullName": "ISANKA",
+      "firstName": "ISANKA ",
+      "lastName": "",
+      "outstandingBalance": "150000"
+    },
+    {
+      "fullName": "Kasowole",
+      "firstName": "Kasowole",
+      "lastName": "",
+      "outstandingBalance": "0"
+    },
+    {
+      "fullName": "Kisakye Jonathan",
+      "firstName": "Kisakye",
+      "lastName": "Jonathan",
+      "outstandingBalance": "0"
+    },
+    {
+      "fullName": "Sharifah Nanyanzi",
+      "firstName": "Sharifah",
+      "lastName": "Nanyanzi",
+      "outstandingBalance": "0"
+    },
+    {
+      "fullName": "Ssemakula Wilson",
+      "firstName": "Ssemakula",
+      "lastName": "Wilson",
+      "outstandingBalance": "0"
+    },
+    {
+      "fullName": "Christiano Kayabula",
+      "firstName": "Christiano",
+      "lastName": "Kayabula",
+      "outstandingBalance": "0"
+    },
+    {
+      "fullName": "Apollo Ssewanyana",
+      "firstName": "Apollo",
+      "lastName": "Ssewanyana",
+      "outstandingBalance": "0"
+    },
+    {
+      "fullName": "Destiny Mukisa",
+      "firstName": "Destiny",
+      "lastName": "Mukisa",
+      "outstandingBalance": "0"
+    },
+    {
+      "fullName": "David Mugarula",
+      "firstName": "David",
+      "lastName": "Mugarula",
+      "outstandingBalance": "7000"
+    },
+    {
+      "fullName": "Joshua Mugabo",
+      "firstName": "Joshua",
+      "lastName": "Mugabo",
+      "outstandingBalance": "67000"
+    },
+    {
+      "fullName": "Kevin Kuguma",
+      "firstName": "Kevin",
+      "lastName": "Kuguma",
+      "outstandingBalance": "37000"
+    },
+    {
+      "fullName": "Kansaze Gloria",
+      "firstName": "Kansaze",
+      "lastName": "Gloria",
+      "outstandingBalance": "55000"
+    },
+    {
+      "fullName": "Nabutono Alphine",
+      "firstName": "Nabutono",
+      "lastName": "Alphine",
+      "outstandingBalance": "0"
+    },
+    {
+      "fullName": "Namikka Joeline",
+      "firstName": "Namikka",
+      "lastName": "Joeline",
+      "outstandingBalance": "105000"
+    },
+    {
+      "fullName": "Humphfrey Bahat",
+      "firstName": "Humphfrey",
+      "lastName": "Bahat",
+      "outstandingBalance": "380000"
+    },
+    {
+      "fullName": "Muhanguzi",
+      "firstName": "Muhanguzi",
+      "lastName": "",
+      "outstandingBalance": "100000"
+    },
+    {
+      "fullName": "Wanyenze",
+      "firstName": "Wanyenze",
+      "lastName": "",
+      "outstandingBalance": "0"
+    },
+    {
+      "fullName": "Nowamani Aaron",
+      "firstName": "Nowamani",
+      "lastName": "Aaron",
+      "outstandingBalance": "145000"
+    },
+    {
+      "fullName": "Buzare",
+      "firstName": "Buzare",
+      "lastName": "",
+      "outstandingBalance": "60000"
+    },
+    {
+      "fullName": "Bataringaya leon",
+      "firstName": "Bataringaya",
+      "lastName": "leon",
+      "outstandingBalance": "170000"
+    },
+    {
+      "fullName": "mumbejja",
+      "firstName": "mumbejja",
+      "lastName": "",
+      "outstandingBalance": "115000"
+    },
+    {
+      "fullName": "Melvin",
+      "firstName": "Melvin",
+      "lastName": "",
+      "outstandingBalance": "185000"
+    },
+    {
+      "fullName": "Marvin",
+      "firstName": "Marvin ",
+      "lastName": "",
+      "outstandingBalance": "185000"
+    },
+    {
+      "fullName": "Mutabaazi Shifurah",
+      "firstName": "Mutabaazi",
+      "lastName": "Shifurah",
+      "outstandingBalance": "135000"
+    },
+    {
+      "fullName": "Shabirah Nabakiibi",
+      "firstName": "Shabirah",
+      "lastName": "Nabakiibi",
+      "outstandingBalance": "85000"
+    },
+    {
+      "fullName": "Nakawunde Celine",
+      "firstName": "Nakawunde",
+      "lastName": "Celine",
+      "outstandingBalance": "157000"
+    },
+    {
+      "fullName": "Maraka Fahima",
+      "firstName": "Maraka",
+      "lastName": "Fahima",
+      "outstandingBalance": "0"
+    },
+    {
+      "fullName": "Waithera Okidi",
+      "firstName": "Waithera",
+      "lastName": "Okidi",
+      "outstandingBalance": "0"
+    },
+    {
+      "fullName": "Prossy Nagita",
+      "firstName": "Prossy",
+      "lastName": "Nagita",
+      "outstandingBalance": "0"
+    },
+    {
+      "fullName": "Rahuman Kyobe",
+      "firstName": "Rahuman",
+      "lastName": "Kyobe",
+      "outstandingBalance": "135000"
+    },
+    {
+      "fullName": "Alvin Atuhire",
+      "firstName": "Alvin",
+      "lastName": "Atuhire",
+      "outstandingBalance": "0"
+    },
+    {
+      "fullName": "Anitah- Kobusinge",
+      "firstName": "Anitah-",
+      "lastName": "Kobusinge",
+      "outstandingBalance": "120000"
+    },
+    {
+      "fullName": "Anorld- Tumukunde",
+      "firstName": "Anorld-",
+      "lastName": "Tumukunde",
+      "outstandingBalance": "120000"
+    },
+    {
+      "fullName": "Gerald Bumba",
+      "firstName": "Gerald",
+      "lastName": "Bumba",
+      "outstandingBalance": "0"
+    },
+    {
+      "fullName": "Regan Okir",
+      "firstName": "Regan",
+      "lastName": "Okir",
+      "outstandingBalance": "0"
+    },
+    {
+      "fullName": "Ashim Mabonga",
+      "firstName": "Ashim",
+      "lastName": "Mabonga",
+      "outstandingBalance": "98000"
+    },
+    {
+      "fullName": "Itamba Fortunate",
+      "firstName": "Itamba",
+      "lastName": "Fortunate",
+      "outstandingBalance": "0"
+    },
+    {
+      "fullName": "Fahim Kyeyune",
+      "firstName": "Fahim",
+      "lastName": "Kyeyune",
+      "outstandingBalance": "280000"
+    },
+    {
+      "fullName": "Pius Muwumba",
+      "firstName": "Pius",
+      "lastName": "Muwumba",
+      "outstandingBalance": "150000"
+    },
+    {
+      "fullName": "Gether Ochola",
+      "firstName": "Gether",
+      "lastName": "Ochola",
+      "outstandingBalance": "560000"
+    },
+    {
+      "fullName": "Nakajja Tarah",
+      "firstName": "Nakajja",
+      "lastName": "Tarah",
+      "outstandingBalance": "140000"
+    },
+    {
+      "fullName": "kiyimba Sharon",
+      "firstName": "kiyimba",
+      "lastName": "Sharon",
+      "outstandingBalance": "0"
+    },
+    {
+      "fullName": "Phillanda Nambafu",
+      "firstName": "Phillanda",
+      "lastName": "Nambafu",
+      "outstandingBalance": "0"
+    },
+    {
+      "fullName": "Nakazibwe Desire",
+      "firstName": "Nakazibwe",
+      "lastName": "Desire",
+      "outstandingBalance": "110000"
+    },
+    {
+      "fullName": "Nambalirwa",
+      "firstName": "Nambalirwa",
+      "lastName": "",
+      "outstandingBalance": "121000"
+    },
+    {
+      "fullName": "Lwanga valen",
+      "firstName": "Lwanga",
+      "lastName": "valen",
+      "outstandingBalance": "50000"
+    },
+    {
+      "fullName": "Mukula Osany",
+      "firstName": "Mukula",
+      "lastName": "Osany",
+      "outstandingBalance": "100000"
+    },
+    {
+      "fullName": "Connoly",
+      "firstName": "Connoly",
+      "lastName": "",
+      "outstandingBalance": "440000"
+    },
+    {
+      "fullName": "Gift",
+      "firstName": "Gift",
+      "lastName": "",
+      "outstandingBalance": "0"
+    },
+    {
+      "fullName": "Akiror",
+      "firstName": "Akiror",
+      "lastName": "",
+      "outstandingBalance": "-300000"
+    },
+    {
+      "fullName": "Drileba",
+      "firstName": "Drileba",
+      "lastName": "",
+      "outstandingBalance": "30000"
+    },
+    {
+      "fullName": "Namaganda",
+      "firstName": "Namaganda ",
+      "lastName": "",
+      "outstandingBalance": "70000"
+    },
+    {
+      "fullName": "Kajjimu",
+      "firstName": "Kajjimu",
+      "lastName": "",
+      "outstandingBalance": "0"
+    },
+    {
+      "fullName": "total enrollment    217",
+      "firstName": "total enrollment    217",
+      "lastName": "",
+      "outstandingBalance": "0"
+    },
+    {
+      "fullName": "ended on Bajja  27th/07/2026",
+      "firstName": "ended on Bajja  27th/07/2026",
+      "lastName": "",
+      "outstandingBalance": "0"
+    }
+  ]
+}

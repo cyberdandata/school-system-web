@@ -1,0 +1,249 @@
+src/App.tsx(135,54): error TS2339: Property 'teachers' does not exist on type 'SchoolSettings'.
+src/App.tsx(137,33): error TS2339: Property 'teachers' does not exist on type 'SchoolSettings'.
+src/App.tsx(139,49): error TS2551: Property 'nonTeachingStaff' does not exist on type 'SchoolSettings'. Did you mean 'nonTeachingStaffList'?
+src/App.tsx(141,33): error TS2551: Property 'nonTeachingStaff' does not exist on type 'SchoolSettings'. Did you mean 'nonTeachingStaffList'?
+src/components/AdmissionForm.tsx(50,23): error TS2345: Argument of type '{ status?: "Approved" | "Pending" | "Rejected" | "Enrolled"; applicantName?: string; dateOfBirth?: string; gender?: "Female" | "Male"; targetClass?: string; previousSchool?: string; parentName?: string; parentPhone?: string; parentEmail?: string; entranceExamScore?: number; notes?: string; }' is not assignable to parameter of type 'Omit<AdmissionRecord, "id" | "applicationDate">'.
+  Property 'status' is optional in type '{ status?: "Approved" | "Pending" | "Rejected" | "Enrolled"; applicantName?: string; dateOfBirth?: string; gender?: "Female" | "Male"; targetClass?: string; previousSchool?: string; parentName?: string; parentPhone?: string; parentEmail?: string; entranceExamScore?: number; notes?: string; }' but required in type 'Omit<AdmissionRecord, "id" | "applicationDate">'.
+src/components/AdmissionsManager.tsx(107,9): error TS2353: Object literal may only specify known properties, and 'section' does not exist in type 'Learner'.
+src/components/AdmissionsManager.tsx(107,33): error TS2339: Property 'sectionSubjects' does not exist on type 'SchoolSettings'.
+src/components/AdmissionsManager.tsx(120,11): error TS2304: Cannot find name 'onUpdateLearners'.
+src/components/AdmissionsManager.tsx(120,29): error TS2304: Cannot find name 'onUpdateLearners'.
+src/components/AnalyticsDashboard.tsx(16,137): error TS2339: Property 'teachers' does not exist on type 'SchoolSettings'.
+src/components/AnalyticsDashboard.tsx(16,178): error TS2551: Property 'nonTeachingStaff' does not exist on type 'SchoolSettings'. Did you mean 'nonTeachingStaffList'?
+src/components/AnalyticsDashboard.tsx(57,12): error TS2339: Property 'academicRecords' does not exist on type 'AppData'.
+src/components/AttendanceSheetPanel.tsx(16,42): error TS2339: Property 'students' does not exist on type 'AppData'.
+src/components/AttendanceSheetPanel.tsx(17,56): error TS2339: Property 'teachers' does not exist on type 'AppData'.
+src/components/BackupManager.tsx(800,9): error TS2353: Object literal may only specify known properties, and 'data' does not exist in type 'BackupSnapshot'.
+src/components/BackupManager.tsx(829,36): error TS2339: Property 'data' does not exist on type 'BackupSnapshot'.
+src/components/ClassScoreTrends.tsx(121,13): error TS2365: Operator '+=' cannot be applied to types 'number' and 'string | number'.
+src/components/ClassScoreTrends.tsx(123,13): error TS2365: Operator '+=' cannot be applied to types 'number' and 'string | number'.
+src/components/Dashboard.tsx(238,50): error TS2365: Operator '>=' cannot be applied to types 'string | number' and 'number'.
+src/components/Dashboard.tsx(238,64): error TS2365: Operator '<=' cannot be applied to types 'string | number' and 'number'.
+src/components/Dashboard.tsx(247,61): error TS2365: Operator '>=' cannot be applied to types 'string | number' and 'number'.
+src/components/Dashboard.tsx(247,98): error TS2365: Operator '<=' cannot be applied to types 'string | number' and 'number'.
+src/components/Dashboard.tsx(248,62): error TS2365: Operator '>=' cannot be applied to types 'string | number' and 'number'.
+src/components/Dashboard.tsx(248,103): error TS2365: Operator '<=' cannot be applied to types 'string | number' and 'number'.
+src/components/Dashboard.tsx(317,41): error TS2365: Operator '+' cannot be applied to types 'string | number' and 'string | number'.
+src/components/Dashboard.tsx(331,50): error TS2365: Operator '>=' cannot be applied to types 'string | number' and 'number'.
+src/components/Dashboard.tsx(331,64): error TS2365: Operator '<=' cannot be applied to types 'string | number' and 'number'.
+src/components/Dashboard.tsx(336,61): error TS2365: Operator '>=' cannot be applied to types 'string | number' and 'number'.
+src/components/Dashboard.tsx(336,98): error TS2365: Operator '<=' cannot be applied to types 'string | number' and 'number'.
+src/components/Dashboard.tsx(337,62): error TS2365: Operator '>=' cannot be applied to types 'string | number' and 'number'.
+src/components/Dashboard.tsx(337,103): error TS2365: Operator '<=' cannot be applied to types 'string | number' and 'number'.
+src/components/Dashboard.tsx(399,9): error TS2365: Operator '+=' cannot be applied to types 'number' and 'string | number'.
+src/components/Dashboard.tsx(421,44): error TS2365: Operator '>=' cannot be applied to types 'string | number' and 'number'.
+src/components/Dashboard.tsx(421,64): error TS2365: Operator '<=' cannot be applied to types 'string | number' and 'number'.
+src/components/Dashboard.tsx(422,45): error TS2365: Operator '>=' cannot be applied to types 'string | number' and 'number'.
+src/components/Dashboard.tsx(422,66): error TS2365: Operator '<=' cannot be applied to types 'string | number' and 'number'.
+src/components/Dashboard.tsx(430,48): error TS2365: Operator '>=' cannot be applied to types 'string | number' and 'number'.
+src/components/Dashboard.tsx(430,62): error TS2365: Operator '<=' cannot be applied to types 'string | number' and 'number'.
+src/components/Dashboard.tsx(462,34): error TS2339: Property 'employees' does not exist on type 'HRData'.
+src/components/Dashboard.tsx(464,35): error TS2339: Property 'dorms' does not exist on type 'HostelData'.
+src/components/Dashboard.tsx(465,71): error TS2339: Property 'status' does not exist on type 'HostelAllocation'.
+src/components/Dashboard.tsx(468,70): error TS2367: This comparison appears to be unintentional because the types '"Overdue" | "Inside School" | "Exited"' and '"Checked In"' have no overlap.
+src/components/EntryControlPanel.tsx(46,59): error TS2339: Property 'teachers' does not exist on type 'AppData'.
+src/components/EntryControlPanel.tsx(47,42): error TS2339: Property 'students' does not exist on type 'AppData'.
+src/components/FinanceManager.tsx(1528,18): error TS2304: Cannot find name 'ArrowDownToLine'.
+src/components/FinanceManager.tsx(1554,18): error TS2304: Cannot find name 'ArrowUpFromLine'.
+src/components/FinanceManager.tsx(6638,48): error TS2304: Cannot find name 'handleUpdateCategoryColor'.
+src/components/FinanceManager.tsx(6649,44): error TS2304: Cannot find name 'handleDeleteCategory'.
+src/components/FinanceManager.tsx(6664,33): error TS2304: Cannot find name 'handleAddCategory'.
+src/components/FinanceManager.tsx(6672,30): error TS2304: Cannot find name 'newCatName'.
+src/components/FinanceManager.tsx(6673,40): error TS2304: Cannot find name 'setNewCatName'.
+src/components/FinanceManager.tsx(6686,40): error TS2304: Cannot find name 'setNewCatType'.
+src/components/FinanceManager.tsx(6688,27): error TS2304: Cannot find name 'newCatType'.
+src/components/FinanceManager.tsx(6697,40): error TS2304: Cannot find name 'setNewCatType'.
+src/components/FinanceManager.tsx(6699,27): error TS2304: Cannot find name 'newCatType'.
+src/components/FinanceManager.tsx(6714,44): error TS2304: Cannot find name 'newCatColor'.
+src/components/FinanceManager.tsx(6720,44): error TS2304: Cannot find name 'setNewCatColor'.
+src/components/FinanceVendorsTab.tsx(101,7): error TS2353: Object literal may only specify known properties, and 'reference' does not exist in type 'FinanceTransaction'.
+src/components/FinanceVendorsTab.tsx(130,45): error TS2339: Property 'balance' does not exist on type 'BankAccount'.
+src/components/FinanceVendorsTab.tsx(449,74): error TS2339: Property 'balance' does not exist on type 'BankAccount'.
+src/components/FinanceVendorsTab.tsx(450,88): error TS2339: Property 'balance' does not exist on type 'BankAccount'.
+src/components/FinanceVendorsTab.tsx(454,85): error TS2339: Property 'balance' does not exist on type 'BankAccount'.
+src/components/FinanceVendorsTab.tsx(466,190): error TS2339: Property 'balance' does not exist on type 'BankAccount'.
+src/components/HRDocuments.tsx(29,37): error TS2339: Property 'schoolMotto' does not exist on type 'SchoolSettings'.
+src/components/HRDocuments.tsx(400,100): error TS2339: Property 'accountNumber' does not exist on type 'StaffMember'.
+  Property 'accountNumber' does not exist on type 'Teacher & { staffType: "teacher" | "non-teaching"; }'.
+src/components/HRDocuments.tsx(476,102): error TS2339: Property 'role' does not exist on type 'StaffMember'.
+  Property 'role' does not exist on type 'Teacher & { staffType: "teacher" | "non-teaching"; }'.
+src/components/HRManager.tsx(100,52): error TS2339: Property 'teachers' does not exist on type 'AppData'.
+src/components/HRManager.tsx(362,9): error TS2353: Object literal may only specify known properties, and 'role' does not exist in type 'Teacher'.
+src/components/HRManager.tsx(366,62): error TS2339: Property 'teachers' does not exist on type 'AppData'.
+src/components/HRManager.tsx(372,9): error TS2353: Object literal may only specify known properties, and 'type' does not exist in type 'NonTeachingStaff'.
+src/components/HRManager.tsx(374,57): error TS2339: Property 'teachers' does not exist on type 'AppData'.
+src/components/HRManager.tsx(409,68): error TS2339: Property 'teachers' does not exist on type 'AppData'.
+src/components/HRManager.tsx(419,57): error TS2339: Property 'teachers' does not exist on type 'AppData'.
+src/components/HRManager.tsx(874,35): error TS2339: Property 'bankAccounts' does not exist on type 'SchoolSettings'.
+src/components/ImportExport.tsx(1075,11): error TS2353: Object literal may only specify known properties, and 'subjects' does not exist in type 'Teacher'.
+src/components/ImportExport.tsx(1088,11): error TS2353: Object literal may only specify known properties, and 'email' does not exist in type 'NonTeachingStaff'.
+src/components/ProcurementManager.tsx(42,40): error TS2339: Property 'role' does not exist on type 'User'.
+src/components/ProcurementManager.tsx(42,76): error TS2339: Property 'role' does not exist on type 'User'.
+src/components/ProcurementManager.tsx(65,32): error TS2339: Property 'username' does not exist on type 'User'.
+src/components/ProcurementManager.tsx(89,35): error TS2339: Property 'username' does not exist on type 'User'.
+src/components/ProcurementManager.tsx(237,91): error TS2339: Property 'currency' does not exist on type 'SchoolSettings'.
+src/components/ReportCard.tsx(785,34): error TS2365: Operator '>=' cannot be applied to types 'string | number' and 'number'.
+src/components/ReportCard.tsx(785,52): error TS2365: Operator '<=' cannot be applied to types 'string | number' and 'number'.
+src/components/ReportCard.tsx(791,11): error TS2365: Operator '+=' cannot be applied to types 'number' and 'string | number'.
+src/components/ReportCard.tsx(834,55): error TS2365: Operator '+' cannot be applied to types 'string | number' and 'string | number'.
+src/components/ReportCard.tsx(855,53): error TS2365: Operator '>=' cannot be applied to types 'string | number' and 'number'.
+src/components/ReportCard.tsx(855,71): error TS2365: Operator '<=' cannot be applied to types 'string | number' and 'number'.
+src/components/ReportCard.tsx(1113,96): error TS2367: This comparison appears to be unintentional because the types '"preprimary" | "lower" | "upper"' and '"nursery"' have no overlap.
+src/components/ReportCard.tsx(1284,55): error TS2322: Type '{ learner: Learner; examSet: ExamSet; report: ReportData; settings: SchoolSettings; sectionKey: "preprimary" | "lower" | "upper"; draftMode: boolean; ... 4 more ...; key: string; }' is not assignable to type 'TemplateProps'.
+  Property 'key' does not exist on type 'TemplateProps'.
+src/components/ReportCard.tsx(1285,55): error TS2322: Type '{ learner: Learner; examSet: ExamSet; report: ReportData; settings: SchoolSettings; sectionKey: "preprimary" | "lower" | "upper"; draftMode: boolean; ... 4 more ...; key: string; }' is not assignable to type 'TemplateProps'.
+  Property 'key' does not exist on type 'TemplateProps'.
+src/components/ReportCard.tsx(1286,55): error TS2322: Type '{ learner: Learner; examSet: ExamSet; report: ReportData; settings: SchoolSettings; sectionKey: "preprimary" | "lower" | "upper"; draftMode: boolean; ... 4 more ...; key: string; }' is not assignable to type 'TemplateProps'.
+  Property 'key' does not exist on type 'TemplateProps'.
+src/components/ReportCard.tsx(1287,55): error TS2322: Type '{ learner: Learner; examSet: ExamSet; report: ReportData; settings: SchoolSettings; sectionKey: "preprimary" | "lower" | "upper"; draftMode: boolean; ... 4 more ...; key: string; }' is not assignable to type 'TemplateProps'.
+  Property 'key' does not exist on type 'TemplateProps'.
+src/components/ReportCard.tsx(1288,32): error TS2322: Type '{ learner: Learner; examSet: ExamSet; report: ReportData; settings: SchoolSettings; sectionKey: "preprimary" | "lower" | "upper"; draftMode: boolean; ... 4 more ...; key: string; }' is not assignable to type 'TemplateProps'.
+  Property 'key' does not exist on type 'TemplateProps'.
+src/components/ReportCard.tsx(1290,55): error TS2322: Type '{ learner: Learner; examSet: ExamSet; report: ReportData; settings: SchoolSettings; sectionKey: "preprimary" | "lower" | "upper"; draftMode: boolean; ... 4 more ...; key: string; }' is not assignable to type 'TemplateProps'.
+  Property 'key' does not exist on type 'TemplateProps'.
+src/components/ReportCard.tsx(1291,55): error TS2322: Type '{ learner: Learner; examSet: ExamSet; report: ReportData; settings: SchoolSettings; sectionKey: "preprimary" | "lower" | "upper"; draftMode: boolean; ... 4 more ...; key: string; }' is not assignable to type 'TemplateProps'.
+  Property 'key' does not exist on type 'TemplateProps'.
+src/components/ReportCard.tsx(1292,55): error TS2322: Type '{ learner: Learner; examSet: ExamSet; report: ReportData; settings: SchoolSettings; sectionKey: "preprimary" | "lower" | "upper"; draftMode: boolean; ... 4 more ...; key: string; }' is not assignable to type 'TemplateProps'.
+  Property 'key' does not exist on type 'TemplateProps'.
+src/components/ReportCard.tsx(1293,55): error TS2322: Type '{ learner: Learner; examSet: ExamSet; report: ReportData; settings: SchoolSettings; sectionKey: "preprimary" | "lower" | "upper"; draftMode: boolean; ... 4 more ...; key: string; }' is not assignable to type 'TemplateProps'.
+  Property 'key' does not exist on type 'TemplateProps'.
+src/components/ReportCard.tsx(1294,32): error TS2322: Type '{ learner: Learner; examSet: ExamSet; report: ReportData; settings: SchoolSettings; sectionKey: "preprimary" | "lower" | "upper"; draftMode: boolean; ... 4 more ...; key: string; }' is not assignable to type 'TemplateProps'.
+  Property 'key' does not exist on type 'TemplateProps'.
+src/components/reports/NurseryTemplates.tsx(388,19): error TS2339: Property 'showSchoolLogo' does not exist on type 'SchoolSettings'.
+src/components/reports/NurseryTemplates.tsx(388,46): error TS2339: Property 'schoolLogo' does not exist on type 'SchoolSettings'.
+src/components/reports/NurseryTemplates.tsx(389,30): error TS2339: Property 'schoolLogo' does not exist on type 'SchoolSettings'.
+src/components/reports/NurseryTemplates.tsx(392,61): error TS2339: Property 'schoolAddress' does not exist on type 'SchoolSettings'.
+src/components/reports/NurseryTemplates.tsx(392,93): error TS2339: Property 'schoolPhone' does not exist on type 'SchoolSettings'.
+src/components/reports/NurseryTemplates.tsx(393,56): error TS2339: Property 'schoolEmail' does not exist on type 'SchoolSettings'.
+src/components/reports/NurseryTemplates.tsx(393,81): error TS2339: Property 'schoolWebsite' does not exist on type 'SchoolSettings'.
+src/components/reports/NurseryTemplates.tsx(395,44): error TS2339: Property 'year' does not exist on type 'ExamSet'.
+src/components/reports/NurseryTemplates.tsx(401,19): error TS2339: Property 'showStudentPhoto' does not exist on type 'SchoolSettings'.
+src/components/reports/NurseryTemplates.tsx(401,47): error TS2339: Property 'photoUrl' does not exist on type 'Learner'.
+src/components/reports/NurseryTemplates.tsx(402,30): error TS2339: Property 'photoUrl' does not exist on type 'Learner'.
+src/components/reports/NurseryTemplates.tsx(446,17): error TS2551: Property 'showPsychomotor' does not exist on type 'SchoolSettings'. Did you mean 'psychomotor'?
+src/components/reports/NurseryTemplates.tsx(467,17): error TS2339: Property 'showTeacherComments' does not exist on type 'SchoolSettings'.
+src/components/reports/NurseryTemplates.tsx(528,69): error TS2339: Property 'schoolAddress' does not exist on type 'SchoolSettings'.
+src/components/reports/NurseryTemplates.tsx(528,96): error TS2339: Property 'schoolPhone' does not exist on type 'SchoolSettings'.
+src/components/reports/NurseryTemplates.tsx(530,19): error TS2339: Property 'showSchoolLogo' does not exist on type 'SchoolSettings'.
+src/components/reports/NurseryTemplates.tsx(530,46): error TS2339: Property 'schoolLogo' does not exist on type 'SchoolSettings'.
+src/components/reports/NurseryTemplates.tsx(531,30): error TS2339: Property 'schoolLogo' does not exist on type 'SchoolSettings'.
+src/components/reports/NurseryTemplates.tsx(537,44): error TS2339: Property 'year' does not exist on type 'ExamSet'.
+src/components/reports/NurseryTemplates.tsx(550,93): error TS2339: Property 'gender' does not exist on type 'Learner'.
+src/components/reports/NurseryTemplates.tsx(577,19): error TS2551: Property 'showPsychomotor' does not exist on type 'SchoolSettings'. Did you mean 'psychomotor'?
+src/components/reports/NurseryTemplates.tsx(593,19): error TS2339: Property 'showTeacherComments' does not exist on type 'SchoolSettings'.
+src/components/reports/NurseryTemplates.tsx(640,19): error TS2339: Property 'showSchoolLogo' does not exist on type 'SchoolSettings'.
+src/components/reports/NurseryTemplates.tsx(640,46): error TS2339: Property 'schoolLogo' does not exist on type 'SchoolSettings'.
+src/components/reports/NurseryTemplates.tsx(641,30): error TS2339: Property 'schoolLogo' does not exist on type 'SchoolSettings'.
+src/components/reports/NurseryTemplates.tsx(644,69): error TS2339: Property 'schoolAddress' does not exist on type 'SchoolSettings'.
+src/components/reports/NurseryTemplates.tsx(646,105): error TS2339: Property 'year' does not exist on type 'ExamSet'.
+src/components/reports/NurseryTemplates.tsx(678,17): error TS2339: Property 'showTeacherComments' does not exist on type 'SchoolSettings'.
+src/components/reports/PrimaryTemplates.tsx(511,61): error TS2339: Property 'schoolAddress' does not exist on type 'SchoolSettings'.
+src/components/reports/PrimaryTemplates.tsx(512,56): error TS2339: Property 'schoolPhone' does not exist on type 'SchoolSettings'.
+src/components/reports/PrimaryTemplates.tsx(512,81): error TS2339: Property 'schoolEmail' does not exist on type 'SchoolSettings'.
+src/components/reports/PrimaryTemplates.tsx(514,19): error TS2339: Property 'showSchoolLogo' does not exist on type 'SchoolSettings'.
+src/components/reports/PrimaryTemplates.tsx(514,46): error TS2339: Property 'schoolLogo' does not exist on type 'SchoolSettings'.
+src/components/reports/PrimaryTemplates.tsx(515,30): error TS2339: Property 'schoolLogo' does not exist on type 'SchoolSettings'.
+src/components/reports/PrimaryTemplates.tsx(521,65): error TS2339: Property 'year' does not exist on type 'ExamSet'.
+src/components/reports/PrimaryTemplates.tsx(531,49): error TS2339: Property 'gender' does not exist on type 'Learner'.
+src/components/reports/PrimaryTemplates.tsx(571,17): error TS2339: Property 'showGradingScale' does not exist on type 'SchoolSettings'.
+src/components/reports/PrimaryTemplates.tsx(583,17): error TS2339: Property 'showTeacherComments' does not exist on type 'SchoolSettings'.
+src/components/reports/PrimaryTemplates.tsx(636,21): error TS2339: Property 'showSchoolLogo' does not exist on type 'SchoolSettings'.
+src/components/reports/PrimaryTemplates.tsx(636,48): error TS2339: Property 'schoolLogo' does not exist on type 'SchoolSettings'.
+src/components/reports/PrimaryTemplates.tsx(637,32): error TS2339: Property 'schoolLogo' does not exist on type 'SchoolSettings'.
+src/components/reports/PrimaryTemplates.tsx(640,64): error TS2339: Property 'schoolAddress' does not exist on type 'SchoolSettings'.
+src/components/reports/PrimaryTemplates.tsx(668,38): error TS2339: Property 'year' does not exist on type 'ExamSet'.
+src/components/reports/PrimaryTemplates.tsx(700,19): error TS2339: Property 'showTeacherComments' does not exist on type 'SchoolSettings'.
+src/components/reports/PrimaryTemplates.tsx(745,17): error TS2339: Property 'showSchoolLogo' does not exist on type 'SchoolSettings'.
+src/components/reports/PrimaryTemplates.tsx(745,44): error TS2339: Property 'schoolLogo' does not exist on type 'SchoolSettings'.
+src/components/reports/PrimaryTemplates.tsx(747,32): error TS2339: Property 'schoolLogo' does not exist on type 'SchoolSettings'.
+src/components/reports/PrimaryTemplates.tsx(753,19): error TS2339: Property 'showSchoolLogo' does not exist on type 'SchoolSettings'.
+src/components/reports/PrimaryTemplates.tsx(753,46): error TS2339: Property 'schoolLogo' does not exist on type 'SchoolSettings'.
+src/components/reports/PrimaryTemplates.tsx(754,30): error TS2339: Property 'schoolLogo' does not exist on type 'SchoolSettings'.
+src/components/reports/PrimaryTemplates.tsx(757,98): error TS2339: Property 'schoolAddress' does not exist on type 'SchoolSettings'.
+src/components/reports/PrimaryTemplates.tsx(762,37): error TS2339: Property 'year' does not exist on type 'ExamSet'.
+src/components/reports/PrimaryTemplates.tsx(821,17): error TS2339: Property 'showTeacherComments' does not exist on type 'SchoolSettings'.
+src/components/Scores.tsx(1172,23): error TS2322: Type 'unknown' is not assignable to type 'string | number'.
+src/components/Scores.tsx(1312,11): error TS2322: Type 'ScoreRecord' is not assignable to type '{ [subj: string]: number; }'.
+  'string' index signatures are incompatible.
+    Type 'string | number' is not assignable to type 'number'.
+      Type 'string' is not assignable to type 'number'.
+src/components/Settings.tsx(3446,36): error TS2304: Cannot find name 'handleAddLibraryBook'.
+src/components/Settings.tsx(3453,46): error TS2304: Cannot find name 'handleRemoveLibraryBook'.
+src/components/Settings.tsx(3463,20): error TS2304: Cannot find name 'Home'.
+src/components/Settings.tsx(3469,36): error TS2304: Cannot find name 'handleAddDormRoom'.
+src/components/Settings.tsx(3476,46): error TS2304: Cannot find name 'handleRemoveDormRoom'.
+src/components/Staff360.tsx(31,65): error TS2339: Property 'issuedToType' does not exist on type 'LibraryIssue'.
+src/components/Staff360.tsx(31,97): error TS2339: Property 'issuedToId' does not exist on type 'LibraryIssue'.
+src/components/Staff360.tsx(113,26): error TS2367: This comparison appears to be unintentional because the types '"Entry" | "Pickup" | "Exit"' and '"Present"' have no overlap.
+src/components/Student360.tsx(102,108): error TS2339: Property 'stream' does not exist on type 'Learner'.
+src/components/Student360.tsx(136,93): error TS2339: Property 'stream' does not exist on type 'Learner'.
+src/components/Student360.tsx(142,75): error TS2339: Property 'gender' does not exist on type 'Learner'.
+src/components/TeacherWorkloadPanel.tsx(15,30): error TS2339: Property 'staff' does not exist on type 'HRData'.
+src/lib/db.ts(235,15): error TS2322: Type 'string | number' is not assignable to type 'number'.
+  Type 'string' is not assignable to type 'number'.
+src/lib/db.ts(237,15): error TS2322: Type 'string | number' is not assignable to type 'number'.
+  Type 'string' is not assignable to type 'number'.
+src/lib/db.ts(241,15): error TS2322: Type 'string | number' is not assignable to type 'number'.
+  Type 'string' is not assignable to type 'number'.
+src/lib/db.ts(253,15): error TS2322: Type 'string | number' is not assignable to type 'number'.
+  Type 'string' is not assignable to type 'number'.
+src/lib/db.ts(255,15): error TS2322: Type 'string | number' is not assignable to type 'number'.
+  Type 'string' is not assignable to type 'number'.
+src/lib/db.ts(257,15): error TS2322: Type 'string | number' is not assignable to type 'number'.
+  Type 'string' is not assignable to type 'number'.
+src/lib/db.ts(259,15): error TS2322: Type 'string | number' is not assignable to type 'number'.
+  Type 'string' is not assignable to type 'number'.
+src/lib/db.ts(261,15): error TS2322: Type 'string | number' is not assignable to type 'number'.
+  Type 'string' is not assignable to type 'number'.
+src/lib/db.ts(263,15): error TS2322: Type 'string | number' is not assignable to type 'number'.
+  Type 'string' is not assignable to type 'number'.
+src/lib/db.ts(287,7): error TS2353: Object literal may only specify known properties, and 'capacity' does not exist in type 'HostelDormitory'.
+src/lib/db.ts(531,26): error TS2345: Argument of type '{ id: string; name: string; cls: string; admNo: string; paycode: string; sex: string; age: string; }' is not assignable to parameter of type 'Learner'.
+  Types of property 'sex' are incompatible.
+    Type 'string' is not assignable to type 'Sex'.
+src/lib/db.ts(539,17): error TS2339: Property 'dayBoarding' does not exist on type '{ id: string; name: string; cls: string; admNo: string; paycode: string; sex: string; age: string; }'.
+src/lib/db.ts(548,11): error TS2353: Object literal may only specify known properties, and 'dateAssigned' does not exist in type 'HostelAllocation'.
+src/lib/db.ts(574,15): error TS2339: Property 'feeTuition' does not exist on type '{ id: string; name: string; cls: string; admNo: string; paycode: string; sex: string; age: string; }'.
+src/lib/db.ts(575,15): error TS2339: Property 'feeBoarding' does not exist on type '{ id: string; name: string; cls: string; admNo: string; paycode: string; sex: string; age: string; }'.
+src/lib/db.ts(576,15): error TS2339: Property 'feeVan' does not exist on type '{ id: string; name: string; cls: string; admNo: string; paycode: string; sex: string; age: string; }'.
+src/lib/db.ts(579,15): error TS2339: Property 'outstandingBalance' does not exist on type '{ id: string; name: string; cls: string; admNo: string; paycode: string; sex: string; age: string; }'.
+src/lib/db.ts(917,47): error TS2345: Argument of type '"cloud_sync"' is not assignable to parameter of type 'keyof AppData'.
+src/lib/db.ts(1437,76): error TS2353: Object literal may only specify known properties, and 'requireIdForEntry' does not exist in type 'SecurityGateSystemConfig'.
+src/lib/db.ts(1438,7): error TS2739: Type '{ routes: undefined[]; allocations: undefined[]; }' is missing the following properties from type 'TransportData': vans, fuelLogs, maintenanceLogs
+src/lib/db.ts(1624,7): error TS2322: Type '"cached"' is not assignable to type '"error" | "offline" | "idle" | "synced" | "syncing"'.
+src/lib/db.ts(1664,13): error TS2304: Cannot find name 'syncWithWorkspaceServer'.
+src/lib/defaults.ts(251,120): error TS2322: Type '"Unknown"' is not assignable to type '"Female" | "Male"'.
+src/lib/defaults.ts(252,110): error TS2322: Type '"Unknown"' is not assignable to type '"Female" | "Male"'.
+src/lib/defaults.ts(253,125): error TS2322: Type '"Unknown"' is not assignable to type '"Female" | "Male"'.
+src/lib/defaults.ts(254,116): error TS2322: Type '"Unknown"' is not assignable to type '"Female" | "Male"'.
+src/lib/defaults.ts(255,114): error TS2322: Type '"Unknown"' is not assignable to type '"Female" | "Male"'.
+src/lib/defaults.ts(256,114): error TS2322: Type '"Unknown"' is not assignable to type '"Female" | "Male"'.
+src/lib/defaults.ts(257,115): error TS2322: Type '"Unknown"' is not assignable to type '"Female" | "Male"'.
+src/lib/defaults.ts(258,113): error TS2322: Type '"Unknown"' is not assignable to type '"Female" | "Male"'.
+src/lib/defaults.ts(259,116): error TS2322: Type '"Unknown"' is not assignable to type '"Female" | "Male"'.
+src/lib/defaults.ts(260,116): error TS2322: Type '"Unknown"' is not assignable to type '"Female" | "Male"'.
+src/lib/defaults.ts(261,117): error TS2322: Type '"Unknown"' is not assignable to type '"Female" | "Male"'.
+src/lib/defaults.ts(262,115): error TS2322: Type '"Unknown"' is not assignable to type '"Female" | "Male"'.
+src/lib/defaults.ts(263,114): error TS2322: Type '"Unknown"' is not assignable to type '"Female" | "Male"'.
+src/lib/defaults.ts(264,112): error TS2322: Type '"Unknown"' is not assignable to type '"Female" | "Male"'.
+src/lib/defaults.ts(265,117): error TS2322: Type '"Unknown"' is not assignable to type '"Female" | "Male"'.
+src/lib/defaults.ts(268,7): error TS2741: Property 'department' is missing in type '{ id: string; name: string; role: string; phone: string; nextOfKinName: string; nextOfKinPhone: string; status: "Active"; baseSalary: number; }' but required in type 'NonTeachingStaff'.
+src/lib/defaults.ts(269,7): error TS2741: Property 'department' is missing in type '{ id: string; name: string; role: string; phone: string; nextOfKinName: string; nextOfKinPhone: string; status: "Active"; baseSalary: number; }' but required in type 'NonTeachingStaff'.
+src/lib/defaults.ts(270,7): error TS2741: Property 'department' is missing in type '{ id: string; name: string; role: string; phone: string; nextOfKinName: string; nextOfKinPhone: string; status: "Active"; baseSalary: number; }' but required in type 'NonTeachingStaff'.
+src/lib/defaults.ts(271,7): error TS2741: Property 'department' is missing in type '{ id: string; name: string; role: string; phone: string; nextOfKinName: string; nextOfKinPhone: string; status: "Active"; baseSalary: number; }' but required in type 'NonTeachingStaff'.
+src/lib/defaults.ts(272,7): error TS2741: Property 'department' is missing in type '{ id: string; name: string; role: string; phone: string; nextOfKinName: string; nextOfKinPhone: string; status: "Active"; baseSalary: number; }' but required in type 'NonTeachingStaff'.
+src/lib/defaults.ts(273,7): error TS2741: Property 'department' is missing in type '{ id: string; name: string; role: string; phone: string; nextOfKinName: string; nextOfKinPhone: string; status: "Active"; baseSalary: number; }' but required in type 'NonTeachingStaff'.
+src/lib/defaults.ts(274,7): error TS2741: Property 'department' is missing in type '{ id: string; name: string; role: string; phone: string; nextOfKinName: string; nextOfKinPhone: string; status: "Active"; baseSalary: number; }' but required in type 'NonTeachingStaff'.
+src/lib/defaults.ts(275,7): error TS2741: Property 'department' is missing in type '{ id: string; name: string; role: string; phone: string; nextOfKinName: string; nextOfKinPhone: string; status: "Active"; }' but required in type 'NonTeachingStaff'.
+src/lib/defaults.ts(555,121): error TS2353: Object literal may only specify known properties, and 'totalCopies' does not exist in type 'LibraryBook'.
+src/lib/defaults.ts(556,47): error TS2353: Object literal may only specify known properties, and 'issuedToType' does not exist in type 'LibraryIssue'.
+src/lib/defaults.ts(559,103): error TS2353: Object literal may only specify known properties, and 'status' does not exist in type 'InventoryAsset'.
+src/lib/defaults.ts(562,76): error TS2353: Object literal may only specify known properties, and 'capacity' does not exist in type 'HostelDormitory'.
+src/lib/defaults.ts(563,124): error TS2353: Object literal may only specify known properties, and 'term' does not exist in type 'HostelAllocation'.
+src/lib/fixGenders.ts(54,17): error TS2339: Property 'updateData' does not exist on type '{ initDB(): Promise<AppData>; getData(): AppData; setData(newData: AppData): void; addActivityLog(type: "settings_modified" | "data_imported" | ... 7 more ... | "security_alarm", details: string, operator?: string): void; ... 47 more ...; initAuthListener(): void; }'.
+src/main.tsx(14,10): error TS2339: Property 'state' does not exist on type 'ErrorBoundary'.
+src/main.tsx(23,10): error TS2339: Property 'setState' does not exist on type 'ErrorBoundary'.
+src/main.tsx(27,14): error TS2339: Property 'state' does not exist on type 'ErrorBoundary'.
+src/main.tsx(33,72): error TS2339: Property 'state' does not exist on type 'ErrorBoundary'.
+src/main.tsx(35,21): error TS2339: Property 'state' does not exist on type 'ErrorBoundary'.
+src/main.tsx(41,17): error TS2339: Property 'props' does not exist on type 'ErrorBoundary'.

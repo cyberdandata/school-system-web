@@ -1,0 +1,6 @@
+{
+  "name": "OTEC Primary Report Card Generator",
+  "description": "High-fidelity report card generation, real-time analytics, and Excel integration following Uganda UNEB PLE standards.",
+  "requestFramePermissions": ["camera", "microphone"],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
