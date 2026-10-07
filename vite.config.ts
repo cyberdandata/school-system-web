@@ -40,23 +40,7 @@ export default defineConfig(() => {
       },
     },
     build: {
-      chunkSizeWarningLimit: 4000,
-      rollupOptions: {
-        output: {
-          manualChunks(id) {
-            if (id.includes('node_modules')) {
-              if (id.includes('firebase')) return 'vendor-firebase';
-              if (id.includes('react') || id.includes('react-dom')) return 'vendor-react';
-              if (id.includes('lucide-react')) return 'vendor-icons';
-              if (id.includes('jspdf') || id.includes('html2canvas')) return 'vendor-pdf';
-              if (id.includes('xlsx')) return 'vendor-excel';
-              if (id.includes('recharts')) return 'vendor-charts';
-              if (id.includes('@google/genai')) return 'vendor-ai';
-              return 'vendor-core';
-            }
-          }
-        }
-      }
+      chunkSizeWarningLimit: 4000
     }
   };
 });
