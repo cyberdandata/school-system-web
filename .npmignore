@@ -6,6 +6,4 @@ coverage/
 !\.env.example
 release/
 installation/
-build/
-dist/
 android/
