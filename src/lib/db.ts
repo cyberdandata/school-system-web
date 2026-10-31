@@ -703,6 +703,69 @@ let knownServerDbVersion = 0;
 let hasLocalDirtyState = false;
 let lastLocalMutationTime = 0;
 
+// ─── OFFLINE PENDING QUEUE ────────────────────────────────────────────────────
+// Stores keys of modified sections that failed to push while offline.
+// When the network comes back, all pending keys are flushed to Firebase.
+let offlinePendingKeys: Set<keyof AppData | '_full'> = new Set();
+
+function flushOfflineQueue() {
+  if (!activeUser || !syncEnabled || offlinePendingKeys.size === 0) return;
+  const keysToFlush = new Set(offlinePendingKeys);
+  offlinePendingKeys.clear();
+
+  const pushFull = keysToFlush.has('_full');
+  const userDocRef = doc(db, 'schools', activeUser.uid, 'data', 'appState');
+
+  if (pushFull) {
+    setDoc(userDocRef, sanitizeForFirestore(currentData))
+      .then(() => {
+        syncStatus = 'synced';
+        localStorage.setItem('otec_last_synced', new Date().toISOString());
+        hasLocalDirtyState = false;
+        dataManager.triggerUpdate();
+        window.dispatchEvent(new CustomEvent('otec-toast', {
+          detail: { message: '☁️ Offline changes synced to cloud successfully!', type: 'success' }
+        }));
+      })
+      .catch(() => {
+        // Put them back in queue
+        keysToFlush.forEach(k => offlinePendingKeys.add(k));
+      });
+  } else {
+    const mergePayload: any = {};
+    keysToFlush.forEach(k => {
+      mergePayload[k as string] = sanitizeForFirestore((currentData as any)[k as string]);
+    });
+    setDoc(userDocRef, mergePayload, { merge: true })
+      .then(() => {
+        syncStatus = 'synced';
+        localStorage.setItem('otec_last_synced', new Date().toISOString());
+        hasLocalDirtyState = false;
+        dataManager.triggerUpdate();
+        window.dispatchEvent(new CustomEvent('otec-toast', {
+          detail: { message: '☁️ Offline changes synced to cloud successfully!', type: 'success' }
+        }));
+      })
+      .catch(() => {
+        keysToFlush.forEach(k => offlinePendingKeys.add(k));
+      });
+  }
+}
+
+// Listen for network restoration and flush the queue automatically
+if (typeof window !== 'undefined') {
+  window.addEventListener('online', () => {
+    console.log('Network restored — flushing offline pending queue...');
+    syncStatus = 'syncing';
+    flushOfflineQueue();
+  });
+}
+// ─────────────────────────────────────────────────────────────────────────────
+
+// Debounce timer for batching rapid CRUDs into a single Firestore write
+let syncDebounceTimer: ReturnType<typeof setTimeout> | null = null;
+const SYNC_DEBOUNCE_MS = 1500; // batch all changes within 1.5s into one push
+
 let multiBrowserChannel: BroadcastChannel | null = null;
 try {
   if (typeof BroadcastChannel !== 'undefined') {
@@ -734,6 +797,10 @@ async function saveToLocalAsync(data: AppData, modifiedKey?: keyof AppData) {
   saveToFileSystem(data).catch(console.error);
 
   try {
+    // Always stamp the local modification time so we can compare with cloud
+    (data as any)._localUpdatedAt = (data as any)._localUpdatedAt || Date.now();
+    await idb.set('_localUpdatedAt', (data as any)._localUpdatedAt);
+
     if (modifiedKey) {
       await idb.set(modifiedKey, (data as any)[modifiedKey]);
     } else {
@@ -747,6 +814,8 @@ async function saveToLocalAsync(data: AppData, modifiedKey?: keyof AppData) {
 }
 
 function saveToLocal(data: AppData, skipBroadcast: boolean = false, modifiedKey?: keyof AppData) {
+  // Stamp modification time on every local write
+  (data as any)._localUpdatedAt = Date.now();
   // Fire and forget IndexedDB save (non-blocking)
   saveToLocalAsync(data, modifiedKey).catch(console.error);
   
@@ -1618,12 +1687,44 @@ export const dataManager = {
   },
 
   // Sync state to Firebase Firestore & Workspace Cloud Server
+  // Uses timestamp-based last-write-wins: local data is pushed if it is newer than last
+  // known cloud state OR if forced. Falls back to an offline queue when no network.
   async syncWithCloud(force: boolean = false, triggerReason: string = 'data_mutation', modifiedKey?: keyof AppData) {
-    if (!force && triggerReason !== 'app_close') {
-      syncStatus = 'synced';
+    // ── OLD BROKEN GUARD REMOVED ──────────────────────────────────────────────
+    // Previously this returned immediately for every non-forced call, meaning
+    // all offline CRUDs were saved locally but NEVER pushed to Firebase.
+    // ─────────────────────────────────────────────────────────────────────────
+
+    if (!syncEnabled) {
+      // Queue the key for when we come back online
+      if (modifiedKey) offlinePendingKeys.add(modifiedKey);
+      else offlinePendingKeys.add('_full');
+      syncStatus = 'offline';
       this.triggerUpdate();
       return;
     }
+
+    // If no user is logged in yet, queue and bail
+    if (!activeUser && syncBackend !== 'custom') {
+      if (modifiedKey) offlinePendingKeys.add(modifiedKey);
+      else offlinePendingKeys.add('_full');
+      return;
+    }
+
+    // ── DEBOUNCE: batch rapid CRUDs into one Firestore write ──────────────────
+    // If not forced (e.g. user is rapidly typing scores), wait SYNC_DEBOUNCE_MS
+    // before actually pushing to avoid spamming Firestore.
+    if (!force && triggerReason !== 'app_close') {
+      if (syncDebounceTimer) clearTimeout(syncDebounceTimer);
+      syncDebounceTimer = setTimeout(() => {
+        dataManager.syncWithCloud(true, triggerReason, modifiedKey);
+      }, SYNC_DEBOUNCE_MS);
+      // Mark dirty locally so the UI indicator shows pending state
+      syncStatus = 'syncing';
+      this.triggerUpdate();
+      return;
+    }
+    // ─────────────────────────────────────────────────────────────────────────
 
     if (!syncEnabled) {
       syncStatus = 'offline';
@@ -1847,25 +1948,66 @@ export const dataManager = {
             const docSnap = await getDoc(userDocRef);
 
             if (docSnap.exists()) {
-              // Load cloud state
               let cloudData = docSnap.data() as AppData;
               cloudData = migrateLowerPrimarySubjects(cloudData);
-              currentData = cloudData;
-              saveToLocal(currentData, false, 'communications');
-              syncStatus = 'synced';
-              localStorage.setItem('otec_last_synced', new Date().toISOString());
+
+              // ── TIMESTAMP-BASED LAST-WRITE-WINS ─────────────────────────────
+              // Compare when local data was last modified vs when cloud was
+              // last synced. If local is newer (user made offline edits), push
+              // local UP to cloud instead of overwriting with cloud data.
+              const localUpdatedAt: number = (currentData as any)._localUpdatedAt || 0;
+              const cloudUpdatedAt: number = (cloudData as any)._localUpdatedAt || 0;
+              const lastSyncedAt: number = new Date(localStorage.getItem('otec_last_synced') || 0).getTime();
+
+              const localIsNewer = localUpdatedAt > cloudUpdatedAt && localUpdatedAt > lastSyncedAt;
+
+              if (localIsNewer) {
+                // Local has unsaved offline changes — push local → cloud
+                console.info(`Timestamp sync: Local data (${new Date(localUpdatedAt).toLocaleTimeString()}) is newer than cloud (${new Date(cloudUpdatedAt).toLocaleTimeString()}). Pushing local → cloud.`);
+                (currentData as any)._localUpdatedAt = Date.now();
+                await setDoc(userDocRef, sanitizeForFirestore(currentData));
+                syncStatus = 'synced';
+                localStorage.setItem('otec_last_synced', new Date().toISOString());
+                hasLocalDirtyState = false;
+
+                window.dispatchEvent(new CustomEvent('otec-toast', {
+                  detail: {
+                    message: '☁️ Offline edits detected and pushed to cloud successfully!',
+                    type: 'success'
+                  }
+                }));
+              } else {
+                // Cloud is newer or equal — apply cloud data
+                console.info(`Timestamp sync: Cloud data is up-to-date. Applying cloud → local.`);
+                currentData = cloudData;
+                saveToLocal(currentData, true);
+                syncStatus = 'synced';
+                localStorage.setItem('otec_last_synced', new Date().toISOString());
+                hasLocalDirtyState = false;
+              }
+              // ────────────────────────────────────────────────────────────────
             } else {
-              // Document doesn't exist in cloud, upload current local state
+              // No cloud document yet — first time login, upload local state
+              console.info('No cloud document found. Uploading local data to Firestore for the first time.');
+              (currentData as any)._localUpdatedAt = Date.now();
               currentData = migrateLowerPrimarySubjects(currentData);
               await setDoc(userDocRef, sanitizeForFirestore(currentData));
               syncStatus = 'synced';
               localStorage.setItem('otec_last_synced', new Date().toISOString());
             }
+
+            // If there were pending offline mutations, flush them now
+            if (offlinePendingKeys.size > 0) {
+              setTimeout(flushOfflineQueue, 500);
+            }
+
           } catch (e: any) {
             const isOffline = e && (e.code === 'unavailable' || e.code === 'failed-precondition' || e.message?.toLowerCase().includes('offline') || !navigator.onLine);
             if (isOffline) {
               console.info('Operating in offline mode. Local-first data will sync when connectivity is restored.');
               syncStatus = 'offline';
+              // Queue everything for retry
+              offlinePendingKeys.add('_full');
             } else {
               console.error('Error fetching user data from firestore', e);
               syncStatus = 'error';
