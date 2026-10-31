@@ -1017,7 +1017,13 @@ function setupRealtimeListener(user: User) {
       const currentDataStr = JSON.stringify(currentData);
       if (cloudDataStr !== currentDataStr) {
         console.log('Real-time sync: Received update from another device/browser.');
-        if (hasLocalDirtyState) {
+        const localUpdatedAt = (currentData as any)._localUpdatedAt || 0;
+        const cloudUpdatedAt = (cloudData as any)._localUpdatedAt || 0;
+        if (localUpdatedAt > cloudUpdatedAt && !hasLocalDirtyState) {
+          // Local is newer (e.g. an offline edit or a wipe made while offline).
+          // Push it up rather than letting the stale cloud snapshot overwrite it.
+          dataManager.syncWithCloud(true, 'realtime_reconcile');
+        } else if (hasLocalDirtyState) {
           window.dispatchEvent(new CustomEvent('otec-sync-conflict', {
             detail: {
               localData: JSON.parse(JSON.stringify(currentData)),
@@ -1492,8 +1498,11 @@ export const dataManager = {
   // Clear everything and load demo
   resetToDefaults() {
     currentData = getDemoData();
-    saveToLocal(currentData, false, 'communications');
+    // Persist the FULL reset state locally (no modifiedKey → every key is
+    // overwritten) instead of only 'communications', then push it to the cloud.
+    saveToLocal(currentData, false);
     this.addActivityLog('reset_defaults', 'Database cleared and reset to system demo defaults.');
+    this.syncWithCloud(true, 'data_mutation');
   },
 
   // Wipe EVERYTHING to start fresh with real data.
@@ -1547,30 +1556,10 @@ export const dataManager = {
     offlinePendingKeys.clear();
     this.triggerUpdate();
 
-    // 2. Mirror the wipe to the cloud so it is not restored on next login
-    try {
-      if (activeUser) {
-        if (syncBackend === 'custom') {
-          await fetch(`${customServerUrl.replace(/\/$/, '')}/api/sync/${activeUser.uid}`, {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify(sanitizeForFirestore(currentData))
-          });
-        } else {
-          const userDocRef = doc(db, 'schools', activeUser.uid, 'data', 'appState');
-          // Full overwrite (no merge) wipes the cloud document too
-          await setDoc(userDocRef, sanitizeForFirestore(currentData));
-        }
-        syncStatus = 'synced';
-        localStorage.setItem('otec_last_synced', new Date().toISOString());
-      }
-    } catch (e) {
-      // Cloud unreachable: queue a full push so the wipe reaches the cloud as
-      // soon as the network returns (or on next login via last-write-wins).
-      console.warn('Cloud wipe deferred (offline). Queued for retry.', e);
-      offlinePendingKeys.add('_full');
-      syncStatus = 'offline';
-    }
+    // 2. Push the wipe to the cloud (Firestore + Google Drive) so the old data
+    //    cannot be pulled back on the next login. syncWithCloud falls back to
+    //    the offline queue when the network is unavailable.
+    await this.syncWithCloud(true, 'data_mutation');
     this.triggerUpdate();
   },
 
@@ -1934,10 +1923,20 @@ export const dataManager = {
 
       // Silent Auto-restore from Google Drive if token is active
       autoRestoreFromGoogleDrive().then(driveData => {
-        if (driveData && driveData.learners) {
+        if (!driveData || !Array.isArray(driveData.learners)) return;
+        const localUpdatedAt = (currentData as any)._localUpdatedAt || 0;
+        const driveUpdatedAt = (driveData as any)._localUpdatedAt || 0;
+        // Never let an older Drive backup undo newer local data (e.g. a wipe).
+        // Only restore when the backup really is newer, or on a fresh install
+        // that has no local timestamp yet.
+        if (localUpdatedAt > 0 && driveUpdatedAt <= localUpdatedAt) {
+          console.info('Google Drive backup is not newer than local data — skipping auto-restore.');
+          return;
+        }
+        {
           const migrated = migrateLowerPrimarySubjects(driveData);
           currentData = migrated;
-          saveToLocal(currentData, false, 'communications');
+          saveToLocal(currentData, false);
           dataManager.triggerUpdate();
           
           window.dispatchEvent(new CustomEvent('otec-modal-notify', {

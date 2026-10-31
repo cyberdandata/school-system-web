@@ -302,7 +302,7 @@ export interface CommentRecord {
 export interface ActivityLog {
   id: string;
   timestamp: string;
-  type: 'report_printed' | 'data_imported' | 'settings_modified' | 'scores_recorded' | 'student_created' | 'reset_defaults' | 'finance_modified' | 'gate_accessed' | 'visitor_registered' | 'security_alarm';
+  type: 'report_printed' | 'data_imported' | 'settings_modified' | 'scores_recorded' | 'student_created' | 'reset_defaults' | 'wipe_data' | 'finance_modified' | 'gate_accessed' | 'visitor_registered' | 'security_alarm';
   details: string;
   operator: string;
 }
