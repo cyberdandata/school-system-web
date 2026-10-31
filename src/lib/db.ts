@@ -35,6 +35,9 @@ if (typeof window !== 'undefined' && (window as any).require) {
 
 const syncBackend = localStorage.getItem('otec_sync_backend') || 'firebase';
 const customServerUrl = localStorage.getItem('otec_custom_server_url') || 'http://localhost:5555';
+// Durable marker set on an intentional full wipe. Lets login reconciliation push
+// the empty state UP to the cloud instead of pulling stale cloud data back down.
+const WIPE_MARKER_KEY = 'otec_local_wiped_at';
 
 async function saveToFileSystem(data: AppData) {
   if (fs && userDataPath) {
@@ -1019,7 +1022,12 @@ function setupRealtimeListener(user: User) {
         console.log('Real-time sync: Received update from another device/browser.');
         const localUpdatedAt = (currentData as any)._localUpdatedAt || 0;
         const cloudUpdatedAt = (cloudData as any)._localUpdatedAt || 0;
-        if (localUpdatedAt > cloudUpdatedAt && !hasLocalDirtyState) {
+        // An intentional wipe must win over a stale cloud snapshot too.
+        const wipedAt = Number(localStorage.getItem(WIPE_MARKER_KEY) || 0);
+        const localIsEmpty = !Array.isArray(currentData.learners) || currentData.learners.length === 0;
+        const cloudHasData = Array.isArray(cloudData.learners) && cloudData.learners.length > 0;
+        const mustPushWipe = wipedAt > 0 && localIsEmpty && cloudHasData;
+        if (mustPushWipe || (localUpdatedAt > cloudUpdatedAt && !hasLocalDirtyState)) {
           // Local is newer (e.g. an offline edit or a wipe made while offline).
           // Push it up rather than letting the stale cloud snapshot overwrite it.
           dataManager.syncWithCloud(true, 'realtime_reconcile');
@@ -1556,10 +1564,16 @@ export const dataManager = {
     offlinePendingKeys.clear();
     this.triggerUpdate();
 
-    // 2. Push the wipe to the cloud (Firestore + Google Drive) so the old data
+    // 2. Durable marker so that even if the cloud push below fails (offline or
+    //    network error), the next login still pushes this empty state UP to the
+    //    cloud instead of pulling the old data back down.
+    localStorage.setItem(WIPE_MARKER_KEY, String(Date.now()));
+
+    // 3. Push the wipe to the cloud (Firestore + Google Drive) so the old data
     //    cannot be pulled back on the next login. syncWithCloud falls back to
     //    the offline queue when the network is unavailable.
     await this.syncWithCloud(true, 'data_mutation');
+    console.info('Wipe: local cleared and cloud push finished (sync status: %s).', syncStatus);
     this.triggerUpdate();
   },
 
@@ -2016,15 +2030,28 @@ export const dataManager = {
               const cloudUpdatedAt: number = (cloudData as any)._localUpdatedAt || 0;
               const lastSyncedAt: number = new Date(localStorage.getItem('otec_last_synced') || 0).getTime();
 
-              const localIsNewer = localUpdatedAt > cloudUpdatedAt && localUpdatedAt > lastSyncedAt;
+              // An intentional wipe on this device must always win: if the local
+              // state is still empty while the cloud still holds data, push the
+              // empty state UP rather than pulling the old data back down.
+              const wipedAt: number = Number(localStorage.getItem(WIPE_MARKER_KEY) || 0);
+              const localIsEmpty = !Array.isArray(currentData.learners) || currentData.learners.length === 0;
+              const cloudHasData = Array.isArray(cloudData.learners) && cloudData.learners.length > 0;
+              const mustPushWipe = wipedAt > 0 && localIsEmpty && cloudHasData;
+
+              const localIsNewer = mustPushWipe || (localUpdatedAt > cloudUpdatedAt && localUpdatedAt > lastSyncedAt);
 
               if (localIsNewer) {
                 // Local has unsaved offline changes — push local → cloud
-                console.info(`Timestamp sync: Local data (${new Date(localUpdatedAt).toLocaleTimeString()}) is newer than cloud (${new Date(cloudUpdatedAt).toLocaleTimeString()}). Pushing local → cloud.`);
+                if (mustPushWipe) {
+                  console.info('Timestamp sync: Local wipe detected — pushing the empty state up to the cloud.');
+                } else {
+                  console.info(`Timestamp sync: Local data (${new Date(localUpdatedAt).toLocaleTimeString()}) is newer than cloud (${new Date(cloudUpdatedAt).toLocaleTimeString()}). Pushing local → cloud.`);
+                }
                 (currentData as any)._localUpdatedAt = Date.now();
                 await setDoc(userDocRef, sanitizeForFirestore(currentData));
                 syncStatus = 'synced';
                 localStorage.setItem('otec_last_synced', new Date().toISOString());
+                localStorage.removeItem(WIPE_MARKER_KEY);
                 hasLocalDirtyState = false;
 
                 window.dispatchEvent(new CustomEvent('otec-toast', {
@@ -2040,6 +2067,7 @@ export const dataManager = {
                 saveToLocal(currentData, true);
                 syncStatus = 'synced';
                 localStorage.setItem('otec_last_synced', new Date().toISOString());
+                localStorage.removeItem(WIPE_MARKER_KEY);
                 hasLocalDirtyState = false;
               }
               // ────────────────────────────────────────────────────────────────
