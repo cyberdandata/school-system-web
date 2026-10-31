@@ -1859,12 +1859,14 @@ export default function ImportExport({
                 Wipe everything completely clean to start fresh with your own real data (No Demo Data).
               </p>
               <button
-                onClick={() => {
+                onClick={async () => {
                   const confirmed1 = confirm('WARNING: This will wipe EVERYTHING completely empty. You will lose all learners, scores, finances, and logs. This is for starting 100% fresh with your own data.');
                   if (confirmed1) {
                     const pwd = prompt('Type "WIPE" to confirm:');
                     if (pwd === 'WIPE') {
-                      dataManager.wipeAllData();
+                      // Await so the local wipe AND the cloud wipe complete
+                      // before the reload, otherwise the pending cloud write is cancelled.
+                      await dataManager.wipeAllData();
                       alert('Database wiped completely clean.');
                       window.location.reload(); // Quickest way to force full app remount with empty state
                     }

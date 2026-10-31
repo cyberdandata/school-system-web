@@ -1138,7 +1138,10 @@ export const dataManager = {
       'learners', 'scores', 'psychomotor', 'comments', 'settings', 'activityLog', 'auditLogs',
       'finances', 'security', 'transport', 'library', 'inventory', 'hostel',
       'timetable', 'clinic', 'discipline', 'extracurricular', 'hr', 'admissions',
-      'procurement', 'communications'
+      'procurement', 'communications',
+      // Persist the local write timestamp so last-write-wins still works after
+      // a reload (previously it was lost, so cloud always won on login).
+      '_localUpdatedAt'
     ];
     
     let data: Partial<AppData> = {};
@@ -1493,14 +1496,24 @@ export const dataManager = {
     this.addActivityLog('reset_defaults', 'Database cleared and reset to system demo defaults.');
   },
 
-  // Wipe EVERYTHING to start fresh with real data
-  wipeAllData() {
+  // Wipe EVERYTHING to start fresh with real data.
+  // Writes the FULL empty state locally (every IndexedDB key) and mirrors the
+  // wipe to the cloud, so the old data is not pulled back on the next login.
+  async wipeAllData() {
     currentData = {
       learners: [],
       scores: {},
       psychomotor: {},
       comments: {},
       settings: currentData.settings, // Keep settings like grading bands
+      activityLog: [{
+        id: 'log-' + Math.random().toString(36).slice(2, 9),
+        timestamp: new Date().toISOString(),
+        type: 'wipe_data',
+        details: 'Database wiped clean for fresh real data entry.',
+        operator: activeUser?.email ? activeUser.email.split('@')[0] : 'Super Admin'
+      }],
+      auditLogs: [],
       finances: [],
       security: { gateLogs: [], visitors: [], unknownAlerts: [], config: { gateState: 'Closed' as any, autoOpenForStudents: false, autoOpenForTeachers: false, notifyParentsOnEntry: false, notifyParentsOnExit: false, livenessDetectionEnabled: false, antiSpoofingEnabled: false, tailgatingAlarmEnabled: false, hikvisionCamConnected: false, zktecoScannerConnected: false, relayControllerOnline: false, activeGateName: 'Main Gate' } },
       transport: { routes: [], allocations: [], vans: [], fuelLogs: [], maintenanceLogs: [] },
@@ -1510,10 +1523,55 @@ export const dataManager = {
       timetable: { slots: [] },
       clinic: { records: {}, visits: [] },
       discipline: { incidents: [] },
-      extracurricular: { clubs: [], memberships: [] }
+      extracurricular: { clubs: [], memberships: [] },
+      hr: { payroll: [], appraisals: [] },
+      admissions: { applicants: [] },
+      procurement: { requests: [] },
+      communications: { messages: [] },
+      bankAccounts: [],
+      bankTransfers: [],
+      vendors: [],
+      vendorInvoices: [],
+      requisitions: [],
+      staffAttendance: []
     };
-    saveToLocal(currentData, false, 'communications');
-    this.addActivityLog('wipe_data', 'Database wiped clean for fresh real data entry.');
+    // Stamp so last-write-wins treats this wipe as the newest write
+    (currentData as any)._localUpdatedAt = Date.now();
+
+    // 1. Persist the FULL empty state locally. Passing no modifiedKey makes
+    //    saveToLocalAsync overwrite every key; the old code only saved
+    //    'communications', leaving learners/scores/finances in IndexedDB.
+    await saveToLocalAsync(currentData);
+    lastSyncedDataHash = '';
+    hasLocalDirtyState = false;
+    offlinePendingKeys.clear();
+    this.triggerUpdate();
+
+    // 2. Mirror the wipe to the cloud so it is not restored on next login
+    try {
+      if (activeUser) {
+        if (syncBackend === 'custom') {
+          await fetch(`${customServerUrl.replace(/\/$/, '')}/api/sync/${activeUser.uid}`, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(sanitizeForFirestore(currentData))
+          });
+        } else {
+          const userDocRef = doc(db, 'schools', activeUser.uid, 'data', 'appState');
+          // Full overwrite (no merge) wipes the cloud document too
+          await setDoc(userDocRef, sanitizeForFirestore(currentData));
+        }
+        syncStatus = 'synced';
+        localStorage.setItem('otec_last_synced', new Date().toISOString());
+      }
+    } catch (e) {
+      // Cloud unreachable: queue a full push so the wipe reaches the cloud as
+      // soon as the network returns (or on next login via last-write-wins).
+      console.warn('Cloud wipe deferred (offline). Queued for retry.', e);
+      offlinePendingKeys.add('_full');
+      syncStatus = 'offline';
+    }
+    this.triggerUpdate();
   },
 
   // State changes subscription
